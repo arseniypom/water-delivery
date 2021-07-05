@@ -1,0 +1,123 @@
+.sidebar {
+  width: 100%;
+  max-width: $sidebar-width;
+  position: absolute;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    margin: 1rem 0;
+  }
+
+  &__buttons {
+    padding: 1rem 0;
+
+    button {
+      padding: .75rem 1rem;
+    }
+  }
+}
+
+.volumes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 8rem;
+
+  &__option {
+    padding: .2rem 0;
+    margin: .1rem;
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+
+    &:hover, &--active {
+      background-color: rgba($accent_color, .1);
+    }
+  }
+}
+
+.price {
+  &__inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    label {
+      font-weight: 600;
+      font-size: 12px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__input {
+    padding: .7rem 1rem;
+    max-width: 6rem;
+    background-color: #F9F9F9;
+    border: 1px solid #D1D1D1;
+    border-radius: 12px;
+  }
+}
+
+.dropdown {
+  &__trigger {
+    padding: .8rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: pointer;
+  }
+
+  &__arrow {
+    span {
+      display: block;
+      width: 8px;
+      height: 8px;
+      position: relative;
+      transition: .5s ease;
+      transform: rotate(180deg);
+      transform-origin: center center;
+
+      &::before,
+      &::after {
+        content: '';
+        width: 2px;
+        height: 10px;
+        background-color: $accent-color;
+        display: block;
+        position: absolute;
+      }
+      &::before {
+        transform: rotate(-45deg);
+        left: 0;
+      }
+      &::after {
+        transform: rotate(45deg);
+        right: 0;
+      }
+    }
+  }
+
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  &--active {
+    .dropdown__content {
+      max-height: 100%; //Поменять на X.style.maxHeight = null;
+    }
+    .dropdown__arrow {
+      span {
+        transform: rotate(0deg);
+      }
+    }
+  }
+}

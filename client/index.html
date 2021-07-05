@@ -58,38 +58,185 @@
     <div class="applied-filters">
       <p class="text-muted">Примененные фильтры:</p>
       <ul class="applied-filters__list">
-        <li class="applied-filters__item">19л<span class="applied-filters__item__delete"></span></li>
+        <li class="applied-filters__item">0.5л<span class="applied-filters__item__delete"></span></li>
         <li class="applied-filters__item">Святой источник<span class="applied-filters__item__delete"></span></li>
       </ul>
     </div>
     <div class="sidebar">
       <h2 class="sidebar__header">Фильтры</h2>
-      <div class="sidebar__option">
-        <h3>Объем</h3>
-        <ul class="volumes">
-          <li class="volumes__option" name="0.5">0.5л</li>
+      <div class="sidebar__option dropdown dropdown--active">
+        <div class="dropdown__trigger">
+          <h3>Объем</h3>
+          <div class="dropdown__arrow">
+            <span></span>
+          </div>
+        </div>
+        <ul class="volumes dropdown__content">
+          <li class="volumes__option volumes__option--active" name="0.5">0.5л</li>
           <li class="volumes__option" name="1">1л</li>
           <li class="volumes__option" name="5">5л</li>
           <li class="volumes__option" name="19">19л</li>
         </ul>
       </div>
-      <div class="sidebar__option">
-        <h3>Цена</h3>
-        <div class="price__inputs">
-          <label>От<input type="text" class="price__input--from" placeholder="99"></label>
-          <label>До<input type="text" class="price__input--to" placeholder="890"></label>
+      <div class="sidebar__option dropdown dropdown--active">
+        <div class="dropdown__trigger">
+          <h3>Цена</h3>
+          <div class="dropdown__arrow">
+            <span></span>
+          </div>
+        </div>
+        <div class="price__inputs dropdown__content">
+          <label>От<input type="text" class="price__input" placeholder="99"></label>
+          <label>До<input type="text" class="price__input" placeholder="890"></label>
         </div>
       </div>
-      <div class="sidebar__option">
-        <h3>Брэнды</h3>
-        <ul class="brands">
-          <li class="brands__option">Святой источник</li>
-          <li class="brands__option">Аква минерале</li>
-          <li class="brands__option">Бонаква</li>
-          <li class="brands__option">Шишкин лес</li>
-          <li class="brands__option">Avian</li>
-          <li class="brands__option">VOSS</li>
+      <div class="sidebar__option dropdown dropdown--active">
+        <div class="dropdown__trigger">
+          <h3>Брэнды</h3>
+          <div class="dropdown__arrow">
+            <span></span>
+          </div>
+        </div>
+        <ul class="brands dropdown__content">
+          <li class="brands__option"><a class="link--primary">Святой источник</a></li>
+          <li class="brands__option"><a class="link--primary">Аква минерале</a></li>
+          <li class="brands__option"><a class="link--primary">Бонаква</a></li>
+          <li class="brands__option"><a class="link--primary">Шишкин лес</a></li>
+          <li class="brands__option"><a class="link--primary">Avian</a></li>
+          <li class="brands__option"><a class="link--primary">VOSS</a></li>
         </ul>
+      </div>
+      <div class="sidebar__buttons">
+        <button class="button--primary">Применить</button>
+        <button class="button--grey">Сбросить</button>
+      </div>
+    </div>
+    <div class="catalog">
+      <div class="product-card">
+        <div class="product-card__discount"><p>- 14%</p></div>
+        <div class="product-card__img">
+          <img src="./images/products/saint-spring.jpg" alt="product">
+        </div>
+        <h4 class="product-card__title">Святой источник</h4>
+        <p class="product-card__volume">Объем: 12x0.75л</p>
+        <div class="product-card__bottom">
+          <div class="product-card__price">
+            <h3 class="product-card__price--current">
+              599
+              <img src="./images/ruble.svg" alt="ruble">
+            </h3>
+            <p class="product-card__price--previous">700</p>
+          </div>
+          <div class="product-card__button button--primary">В корзину</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card__discount"><p>- 20%</p></div>
+        <div class="product-card__img">
+          <img src="./images/products/voss.jpg" alt="product">
+        </div>
+        <h4 class="product-card__title">VOSS</h4>
+        <p class="product-card__volume">Объем: 24x0.5л</p>
+        <div class="product-card__bottom">
+          <div class="product-card__price">
+            <h3 class="product-card__price--current">
+              2999
+              <img src="./images/ruble.svg" alt="ruble">
+            </h3>
+            <p class="product-card__price--previous">3750</p>
+          </div>
+          <div class="product-card__button button--primary">В корзину</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card__discount"><p></p></div>
+        <div class="product-card__img">
+          <img src="./images/products/sample.jpg" alt="product">
+        </div>
+        <h4 class="product-card__title">Sample water</h4>
+        <p class="product-card__volume">Объем: 19л</p>
+        <div class="product-card__bottom">
+          <div class="product-card__price">
+            <h3 class="product-card__price--current">
+              849
+              <img src="./images/ruble.svg" alt="ruble">
+            </h3>
+            <p class="product-card__price--previous"></p>
+          </div>
+          <div class="product-card__button button--primary">В корзину</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card__discount"><p>- 14%</p></div>
+        <div class="product-card__img">
+          <img src="./images/products/saint-spring.jpg" alt="product">
+        </div>
+        <h4 class="product-card__title">Святой источник</h4>
+        <p class="product-card__volume">Объем: 12x0.75л</p>
+        <div class="product-card__bottom">
+          <div class="product-card__price">
+            <h3 class="product-card__price--current">
+              599
+              <img src="./images/ruble.svg" alt="ruble">
+            </h3>
+            <p class="product-card__price--previous">700</p>
+          </div>
+          <div class="product-card__button button--primary">В корзину</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card__discount"><p>- 14%</p></div>
+        <div class="product-card__img">
+          <img src="./images/products/saint-spring.jpg" alt="product">
+        </div>
+        <h4 class="product-card__title">Святой источник</h4>
+        <p class="product-card__volume">Объем: 12x0.75л</p>
+        <div class="product-card__bottom">
+          <div class="product-card__price">
+            <h3 class="product-card__price--current">
+              599
+              <img src="./images/ruble.svg" alt="ruble">
+            </h3>
+            <p class="product-card__price--previous">700</p>
+          </div>
+          <div class="product-card__button button--primary">В корзину</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card__discount"><p>- 14%</p></div>
+        <div class="product-card__img">
+          <img src="./images/products/saint-spring.jpg" alt="product">
+        </div>
+        <h4 class="product-card__title">Святой источник</h4>
+        <p class="product-card__volume">Объем: 12x0.75л</p>
+        <div class="product-card__bottom">
+          <div class="product-card__price">
+            <h3 class="product-card__price--current">
+              599
+              <img src="./images/ruble.svg" alt="ruble">
+            </h3>
+            <p class="product-card__price--previous">700</p>
+          </div>
+          <div class="product-card__button button--primary">В корзину</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card__discount"><p>- 14%</p></div>
+        <div class="product-card__img">
+          <img src="./images/products/saint-spring.jpg" alt="product">
+        </div>
+        <h4 class="product-card__title">Святой источник</h4>
+        <p class="product-card__volume">Объем: 12x0.75л</p>
+        <div class="product-card__bottom">
+          <div class="product-card__price">
+            <h3 class="product-card__price--current">
+              599
+              <img src="./images/ruble.svg" alt="ruble">
+            </h3>
+            <p class="product-card__price--previous">700</p>
+          </div>
+          <div class="product-card__button button--primary">В корзину</div>
+        </div>
       </div>
     </div>
   </main>

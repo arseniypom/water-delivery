@@ -26,14 +26,25 @@ h3 {
   font-size: 1.125rem;
   font-weight: 600;
 }
+h4 {
+  font-size: 0.938rem;
+  font-weight: 500;
+}
 
 a {
   text-decoration: none;
   color: inherit;
 }
+p, li, label {
+  font-size: 14px;
+}
 
 li {
  list-style: none;
+}
+
+input, textarea {
+  outline: none;
 }
 
 .container {
@@ -42,9 +53,42 @@ li {
 }
 
 .link--primary {
-
+  cursor: pointer;
   &:hover {
     color: $accent_color;
+  }
+}
+
+.button--primary {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background-color: $accent_color;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: $accent_color;
+  }
+}
+
+.button--grey {
+  font-size: 13px;
+  font-weight: 700;
+  color: #A9A9A9;
+  padding: .75rem 1rem;
+  background-color: transparent;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #F5F5F5;
   }
 }
 

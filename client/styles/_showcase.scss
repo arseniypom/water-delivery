@@ -17,7 +17,7 @@
     font-size: .75rem;
     font-weight: 600;
     color: $accent_color;
-    background-color: rgba($accent_color, .3);
+    background-color: rgba($accent_color, .1);
     border-radius: 12px;
 
     position: relative;
@@ -52,32 +52,86 @@
   }
 }
 
-.sidebar {
-  width: 100%;
-  max-width: 13rem;
-  position: absolute;
-  left: 0;
-
+.catalog {
+  padding: 1rem 2rem;
+  margin-left: $sidebar-width;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 
-.volumes {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  max-width: 8rem;
+.product-card {
+  width: 16.75rem;
+  margin: 1.4rem .7rem;
+  padding: 1rem;
+  border: 1px solid #D1D1D1;
+  border-radius: 12px;
+  position: relative;
 
-  &__option {
-    padding: .2rem .8rem;
-    border-radius: 20px;
+  &__discount {
+    position: absolute;
+    padding: 0 .5rem;
+    border-radius: 12px;
+    background-color: rgba($accent_color, .3);
 
-    cursor: pointer;
-
-    display: flex;
-    justify-content: center;
-
-    &:hover {
-      background-color: rgba($accent_color, .3);
+    p {
+      color: $accent-color;
+      font-weight: 600;
+      font-size: 13px;
     }
+  }
+
+  &__img {
+    width: 100%;
+    height: 11.25rem;
+
+    img {
+      object-fit: contain;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: .25rem;
+  }
+
+  &__volume {
+    color: #575757;
+    font-size: 12px;
+    margin-bottom: .75rem;
+  }
+
+  &__bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__price--current {
+    font-weight: 600;
+    font-size: 18px;
+    img {
+      width: .75rem;
+      height: auto;
+    }
+  }
+
+  &__price--previous {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    text-decoration-line: line-through;
+    color: #A9A9A9;
+    // img {
+    //   width: .5rem;
+    //   height: auto;
+    //   filter: invert(75%) sepia(8%) saturate(23%) hue-rotate(319deg) brightness(88%) contrast(93%);
+    // }
+  }
+
+  &__button {
+    padding: 6.5px .75rem;
+    height: fit-content;
   }
 }
