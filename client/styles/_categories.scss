@@ -1,0 +1,30 @@
+.categories {
+  background-color: #F9F9F9;
+
+  &__list {
+    width: 100%;
+    height: 100%;
+    max-width: 40rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__option {
+    transition: .2s ease;
+    a {
+      padding: 1rem;
+      display: block;
+      transition: .2s ease;
+    }
+
+    &:hover, &--active {
+      background-color: rgba($accent-color, .2);
+
+      a {
+        color: $accent-color;
+      }
+    }
+  }
+}

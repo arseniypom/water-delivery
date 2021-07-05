@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5rem 0;
+
+  &__links {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}

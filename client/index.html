@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="57x57" href="./favicon.ico/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./favicon.ico/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./favicon.ico/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./favicon.ico/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./favicon.ico/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./favicon.ico/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./favicon.ico/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./favicon.ico/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon.ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="./favicon.ico/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./favicon.ico/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon.ico/favicon-16x16.png">
+  <link rel="manifest" href="./favicon.ico/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="./favicon.ico/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>Water delivery</title>
+  <link rel="stylesheet" href="./styles/index.css">
+</head>
+<body>
+  <header class="container header">
+    <a class="header__logo" href="index.html"><h3>WaterDelivery</h3></a>
+    <div class="header__links">
+      <a class="header__link link--primary" href="cart.html">
+        <img src="./images/cart.svg" alt="cart">
+      </a>
+      <a class="header__link link--primary" href="user.html">
+        <img src="./images/user.svg" alt="sign in">
+      </a>
+    </div>
+  </header>
+  <section class="categories">
+    <ul class=" container categories__list">
+      <li class="categories__option">
+        <a class="link--primary" href="">Питьевая вода</a>
+      </li>
+      <li class="categories__option">
+        <a class="link--primary" href="">Оборудование</a>
+      </li>
+      <li class="categories__option">
+        <a class="link--primary" href="">Услуги</a>
+      </li>
+      <li class="categories__option">
+        <a class="link--primary" href="">Акции</a>
+      </li>
+    </ul>
+  </section>
+  <main class="container showcase">
+    <h1 class="showcase__header">Питьевая вода</h1>
+    <div class="applied-filters">
+      <p class="text-muted">Примененные фильтры:</p>
+      <ul class="applied-filters__list">
+        <li class="applied-filters__item">19л<span class="applied-filters__item__delete"></span></li>
+        <li class="applied-filters__item">Святой источник<span class="applied-filters__item__delete"></span></li>
+      </ul>
+    </div>
+    <div class="sidebar">
+      <h2 class="sidebar__header">Фильтры</h2>
+      <div class="sidebar__option">
+        <h3>Объем</h3>
+        <ul class="volumes">
+          <li class="volumes__option" name="0.5">0.5л</li>
+          <li class="volumes__option" name="1">1л</li>
+          <li class="volumes__option" name="5">5л</li>
+          <li class="volumes__option" name="19">19л</li>
+        </ul>
+      </div>
+      <div class="sidebar__option">
+        <h3>Цена</h3>
+        <div class="price__inputs">
+          <label>От<input type="text" class="price__input--from" placeholder="99"></label>
+          <label>До<input type="text" class="price__input--to" placeholder="890"></label>
+        </div>
+      </div>
+      <div class="sidebar__option">
+        <h3>Брэнды</h3>
+        <ul class="brands">
+          <li class="brands__option">Святой источник</li>
+          <li class="brands__option">Аква минерале</li>
+          <li class="brands__option">Бонаква</li>
+          <li class="brands__option">Шишкин лес</li>
+          <li class="brands__option">Avian</li>
+          <li class="brands__option">VOSS</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

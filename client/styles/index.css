@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  color: #151515;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.375rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  max-width: 1171px;
+  margin: 0 auto;
+}
+
+.link--primary:hover {
+  color: #007CBB;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2.5rem 0;
+}
+
+.header__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 1rem;
+}
+
+.header__link img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.categories {
+  background-color: #F9F9F9;
+}
+
+.categories__list {
+  width: 100%;
+  height: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.categories__option {
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+}
+
+.categories__option a {
+  padding: 1rem;
+  display: block;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+}
+
+.categories__option:hover, .categories__option--active {
+  background-color: rgba(0, 124, 187, 0.2);
+}
+
+.categories__option:hover a, .categories__option--active a {
+  color: #007CBB;
+}
+
+.showcase {
+  position: relative;
+}
+
+.applied-filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.applied-filters__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.applied-filters__item {
+  padding: 0 1.6rem 0 .5rem;
+  margin-left: .75rem;
+  font-size: .75rem;
+  font-weight: 600;
+  color: #007CBB;
+  background-color: rgba(0, 124, 187, 0.3);
+  border-radius: 12px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.applied-filters__item__delete {
+  width: 1rem;
+  height: 1rem;
+  opacity: 0.3;
+  position: absolute;
+  right: -.1rem;
+  cursor: pointer;
+}
+
+.applied-filters__item__delete:hover {
+  opacity: 1;
+}
+
+.applied-filters__item__delete:before, .applied-filters__item__delete:after {
+  position: absolute;
+  content: ' ';
+  height: 1rem;
+  width: 2px;
+  background-color: #007CBB;
+}
+
+.applied-filters__item__delete:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.applied-filters__item__delete:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.sidebar {
+  width: 100%;
+  max-width: 13rem;
+  position: absolute;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.volumes {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  max-width: 8rem;
+}
+
+.volumes__option {
+  padding: .2rem .8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.volumes__option:hover {
+  background-color: rgba(0, 124, 187, 0.3);
+}
+/*# sourceMappingURL=index.css.map */

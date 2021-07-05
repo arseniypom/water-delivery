@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  color: $main_color;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+h2 {
+  font-size: 1.375rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+ list-style: none;
+}
+
+.container {
+  max-width: 1171px;
+  margin: 0 auto;
+}
+
+.link--primary {
+
+  &:hover {
+    color: $accent_color;
+  }
+}
+
