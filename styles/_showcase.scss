@@ -6,6 +6,10 @@
   display: flex;
   align-items: center;
 
+  &__text {
+    font-weight: 600;
+  }
+
   &__list {
     display: flex;
     align-items: center;
@@ -16,8 +20,8 @@
     margin-left: .75rem;
     font-size: .75rem;
     font-weight: 600;
-    color: $accent_color;
-    background-color: rgba($accent_color, .1);
+    color: $accent-color;
+    background-color: rgba($accent-color, .1);
     border-radius: 12px;
 
     position: relative;
@@ -57,10 +61,11 @@
   margin-left: $sidebar-width;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .product-card {
-  width: 16.75rem;
+  width: 16rem;
   margin: 1.4rem .7rem;
   padding: 1rem;
   border: 1px solid #D1D1D1;
@@ -71,7 +76,7 @@
     position: absolute;
     padding: 0 .5rem;
     border-radius: 12px;
-    background-color: rgba($accent_color, .3);
+    background-color: rgba($accent-color, .3);
 
     p {
       color: $accent-color;
@@ -108,7 +113,7 @@
     align-items: center;
   }
 
-  &__price--current {
+  &__price-current {
     font-weight: 600;
     font-size: 18px;
     img {
@@ -117,12 +122,11 @@
     }
   }
 
-  &__price--previous {
+  &__price-previous {
     font-weight: 600;
     font-size: 12px;
     line-height: 18px;
     text-decoration-line: line-through;
-    color: #A9A9A9;
     // img {
     //   width: .5rem;
     //   height: auto;

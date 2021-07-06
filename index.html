@@ -56,7 +56,7 @@
   <main class="container showcase">
     <h1 class="showcase__header">Питьевая вода</h1>
     <div class="applied-filters">
-      <p class="text-muted">Примененные фильтры:</p>
+      <p class="text-muted applied-filters__text">Примененные фильтры:</p>
       <ul class="applied-filters__list">
         <li class="applied-filters__item">0.5л<span class="applied-filters__item__delete"></span></li>
         <li class="applied-filters__item">Святой источник<span class="applied-filters__item__delete"></span></li>
@@ -107,8 +107,8 @@
         </ul>
       </div>
       <div class="sidebar__buttons">
-        <button class="button--primary">Применить</button>
-        <button class="button--grey">Сбросить</button>
+        <button class="button button--primary">Применить</button>
+        <button class="button button--grey">Сбросить</button>
       </div>
     </div>
     <div class="catalog">
@@ -121,11 +121,11 @@
         <p class="product-card__volume">Объем: 12x0.75л</p>
         <div class="product-card__bottom">
           <div class="product-card__price">
-            <h3 class="product-card__price--current">
+            <h3 class="product-card__price-current">
               599
               <img src="./images/ruble.svg" alt="ruble">
             </h3>
-            <p class="product-card__price--previous">700</p>
+            <p class="product-card__price-previous text-muted">700</p>
           </div>
           <div class="product-card__button button--primary">В корзину</div>
         </div>
@@ -139,11 +139,11 @@
         <p class="product-card__volume">Объем: 24x0.5л</p>
         <div class="product-card__bottom">
           <div class="product-card__price">
-            <h3 class="product-card__price--current">
+            <h3 class="product-card__price-current">
               2999
               <img src="./images/ruble.svg" alt="ruble">
             </h3>
-            <p class="product-card__price--previous">3750</p>
+            <p class="product-card__price-previous text-muted">3750</p>
           </div>
           <div class="product-card__button button--primary">В корзину</div>
         </div>
@@ -157,11 +157,11 @@
         <p class="product-card__volume">Объем: 19л</p>
         <div class="product-card__bottom">
           <div class="product-card__price">
-            <h3 class="product-card__price--current">
+            <h3 class="product-card__price-current">
               849
               <img src="./images/ruble.svg" alt="ruble">
             </h3>
-            <p class="product-card__price--previous"></p>
+            <p class="product-card__price-previous text-muted"></p>
           </div>
           <div class="product-card__button button--primary">В корзину</div>
         </div>
@@ -175,11 +175,11 @@
         <p class="product-card__volume">Объем: 12x0.75л</p>
         <div class="product-card__bottom">
           <div class="product-card__price">
-            <h3 class="product-card__price--current">
+            <h3 class="product-card__price-current">
               599
               <img src="./images/ruble.svg" alt="ruble">
             </h3>
-            <p class="product-card__price--previous">700</p>
+            <p class="product-card__price-previous text-muted">700</p>
           </div>
           <div class="product-card__button button--primary">В корзину</div>
         </div>
@@ -193,11 +193,11 @@
         <p class="product-card__volume">Объем: 12x0.75л</p>
         <div class="product-card__bottom">
           <div class="product-card__price">
-            <h3 class="product-card__price--current">
+            <h3 class="product-card__price-current">
               599
               <img src="./images/ruble.svg" alt="ruble">
             </h3>
-            <p class="product-card__price--previous">700</p>
+            <p class="product-card__price-previous text-muted">700</p>
           </div>
           <div class="product-card__button button--primary">В корзину</div>
         </div>
@@ -211,11 +211,11 @@
         <p class="product-card__volume">Объем: 12x0.75л</p>
         <div class="product-card__bottom">
           <div class="product-card__price">
-            <h3 class="product-card__price--current">
+            <h3 class="product-card__price-current">
               599
               <img src="./images/ruble.svg" alt="ruble">
             </h3>
-            <p class="product-card__price--previous">700</p>
+            <p class="product-card__price-previous text-muted">700</p>
           </div>
           <div class="product-card__button button--primary">В корзину</div>
         </div>
@@ -229,16 +229,102 @@
         <p class="product-card__volume">Объем: 12x0.75л</p>
         <div class="product-card__bottom">
           <div class="product-card__price">
-            <h3 class="product-card__price--current">
+            <h3 class="product-card__price-current">
               599
               <img src="./images/ruble.svg" alt="ruble">
             </h3>
-            <p class="product-card__price--previous">700</p>
+            <p class="product-card__price-previous text-muted">700</p>
           </div>
           <div class="product-card__button button--primary">В корзину</div>
         </div>
       </div>
     </div>
   </main>
+  <section class="cart-modal">
+    <div class="cart-modal__top">
+      <h2>Корзина</h2>
+      <button class="cart-modal__top__close">
+        Закрыть <span></span>
+      </button>
+    </div>
+    <div class="cart-modal__products">
+      <div class="cart-modal__product">
+        <div class="cart-modal__product__column cart-modal__product__column-left">
+          <div class="cart-modal__product__img">
+            <img src="./images/products/saint-spring.jpg" alt="product">
+          </div>
+          <button class="cart-modal__product__remove">
+            Удалить <span></span>
+          </button>
+        </div>
+        <div class="cart-modal__product__column cart-modal__product__column-right">
+          <h4 class="cart-modal__product__title">Святой источник</h4>
+          <div class="cart-modal__product__volume">
+            <p class="cart-modal__product__volume__text text-muted">Объем:</p>
+            <p>12x0.75л</p>
+          </div>
+          <div class="cart-modal__product__bottom">
+            <div class="cart-modal__product__price">
+              <h3 class="cart-modal__product__price-current">
+                599
+                <img src="./images/ruble.svg" alt="ruble">
+              </h3>
+              <p class="cart-modal__product__price-previous text-muted">700</p>
+            </div>
+            <div class="cart-modal__product__amount">
+              <select class="cart-modal__product__amount__select" name="amount-select">
+                <option value="value1" selected>1 шт.</option>
+                <option value="value2">2 шт.</option>
+                <option value="value3">3 шт.</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cart-modal__product">
+        <div class="cart-modal__product__column cart-modal__product__column-left">
+          <div class="cart-modal__product__img">
+            <img src="./images/products/saint-spring.jpg" alt="product">
+          </div>
+          <button class="cart-modal__product__remove">
+            Удалить <span></span>
+          </button>
+        </div>
+        <div class="cart-modal__product__column cart-modal__product__column-right">
+          <h4 class="cart-modal__product__title">Святой источник</h4>
+          <div class="cart-modal__product__volume">
+            <p class="cart-modal__product__volume__text text-muted">Объем:</p>
+            <p>12x0.75л</p>
+          </div>
+          <div class="cart-modal__product__bottom">
+            <div class="cart-modal__product__price">
+              <h3 class="cart-modal__product__price-current">
+                599
+                <img src="./images/ruble.svg" alt="ruble">
+              </h3>
+              <p class="cart-modal__product__price-previous text-muted">700</p>
+            </div>
+            <div class="cart-modal__product__amount">
+              <select class="cart-modal__product__amount__select" name="amount-select">
+                <option value="value1" selected>1 шт.</option>
+                <option value="value2">2 шт.</option>
+                <option value="value3">3 шт.</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart-modal__bottom">
+      <div class="cart-modal__subtotal">
+        <p>Итог:</p>
+        <h2>3800 <img src="./images/ruble.svg" alt="ruble"></h2>
+      </div>
+      <div class="cart-modal__buttons">
+        <button class="button button--black">Продолжить покупки</button>
+        <button class="button button--primary">Оформить заказ</button>
+      </div>
+    </div>
+  </section>
 </body>
 </html>

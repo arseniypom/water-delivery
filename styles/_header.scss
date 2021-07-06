@@ -1,7 +1,8 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 2.5rem 0;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 
   &__links {
     display: flex;

@@ -11,7 +11,7 @@ html {
 body {
   margin: 0;
   font-family: 'Poppins', Helvetica, Arial, sans-serif;
-  color: $main_color;
+  color: $main-color;
 }
 
 h1 {
@@ -50,36 +50,23 @@ input, textarea {
 .container {
   max-width: 1171px;
   margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.text-muted {
+  color: #A9A9A9;
 }
 
 .link--primary {
   cursor: pointer;
   &:hover {
-    color: $accent_color;
+    color: $accent-color;
   }
 }
 
-.button--primary {
+.button {
   font-size: 13px;
   font-weight: 700;
-  color: #fff;
-  background-color: $accent_color;
-  border-radius: 12px;
-  outline: none;
-  border: none;
-
-  cursor: pointer;
-
-  &:hover {
-    background-color: $accent_color;
-  }
-}
-
-.button--grey {
-  font-size: 13px;
-  font-weight: 700;
-  color: #A9A9A9;
-  padding: .75rem 1rem;
   background-color: transparent;
   border-radius: 12px;
   outline: none;
@@ -92,3 +79,20 @@ input, textarea {
   }
 }
 
+.button--primary {
+  color: #fff;
+  background-color: $accent-color;
+  border-radius: 12px;
+
+  &:hover {
+    background-color: $accent-color;
+  }
+}
+
+.button--grey {
+  color: #A9A9A9;
+}
+
+.button--black {
+  color: #151515;
+}
