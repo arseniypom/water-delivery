@@ -39,10 +39,18 @@ h4 {
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
 p, li, label {
   font-size: 14px;
+}
+
+button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 
 li {
@@ -74,10 +82,7 @@ input, textarea {
 .button {
   font-size: 13px;
   font-weight: 700;
-  background-color: transparent;
   border-radius: 12px;
-  outline: none;
-  border: none;
   cursor: pointer;
 }
 
@@ -88,7 +93,6 @@ input, textarea {
 .button--primary {
   color: #fff;
   background-color: #007CBB;
-  border-radius: 12px;
 }
 
 .button--primary:hover {
@@ -342,6 +346,7 @@ input, textarea {
 
 .product-card__button {
   padding: 6.5px .75rem;
+  line-height: 22.5px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -495,13 +500,29 @@ input, textarea {
 
 .cart-modal {
   width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.cart-modal__window {
+  width: 100%;
   max-width: 25rem;
   height: 100%;
   padding: 1.5rem 1rem;
   background-color: #FFFFFF;
-  position: fixed;
-  right: 0;
+  position: absolute;
+  right: -25rem;
   top: 0;
+  z-index: 3;
+  -webkit-transition: right .3s ease;
+  transition: right .3s ease;
 }
 
 .cart-modal__top {
@@ -520,6 +541,23 @@ input, textarea {
 .cart-modal__top h2 {
   font-weight: 600;
   font-size: 26px;
+}
+
+.cart-modal__top__close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart-modal__top__close p {
+  color: #A9A9A9;
+}
+
+.cart-modal__top__close img {
+  margin-left: .4rem;
 }
 
 .cart-modal__products {
@@ -543,6 +581,9 @@ input, textarea {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .cart-modal__product__column {
@@ -572,6 +613,27 @@ input, textarea {
 }
 
 .cart-modal__product__remove {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.cart-modal__product__remove img {
+  width: 7px;
+  height: auto;
+  margin-right: 6px;
+}
+
+.cart-modal__product__remove p {
+  color: #A9A9A9;
+  font-size: .75rem;
   position: absolute;
   bottom: 0;
 }
@@ -614,6 +676,10 @@ input, textarea {
   text-decoration: line-through;
 }
 
+.cart-modal__product__amount select {
+  cursor: pointer;
+}
+
 .cart-modal__bottom {
   position: absolute;
   bottom: 0;
@@ -652,5 +718,14 @@ input, textarea {
 
 .cart-modal__buttons button {
   padding: .75rem 1rem;
+}
+
+.cart-modal--active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.cart-modal--active .cart-modal__window {
+  right: 0;
 }
 /*# sourceMappingURL=index.css.map */

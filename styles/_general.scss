@@ -34,9 +34,17 @@ h4 {
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 p, li, label {
   font-size: 14px;
+}
+
+button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 
 li {
@@ -54,7 +62,7 @@ input, textarea {
 }
 
 .text-muted {
-  color: #A9A9A9;
+  color: $muted-color;
 }
 
 .link--primary {
@@ -67,10 +75,7 @@ input, textarea {
 .button {
   font-size: 13px;
   font-weight: 700;
-  background-color: transparent;
   border-radius: 12px;
-  outline: none;
-  border: none;
 
   cursor: pointer;
 
@@ -82,7 +87,6 @@ input, textarea {
 .button--primary {
   color: #fff;
   background-color: $accent-color;
-  border-radius: 12px;
 
   &:hover {
     background-color: $accent-color;
@@ -90,7 +94,7 @@ input, textarea {
 }
 
 .button--grey {
-  color: #A9A9A9;
+  color: $muted-color;
 }
 
 .button--black {
