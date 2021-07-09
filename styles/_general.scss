@@ -31,10 +31,13 @@ h4 {
   font-weight: 500;
 }
 
+a, button, select {
+  cursor: pointer;
+}
+
 a {
   text-decoration: none;
   color: inherit;
-  cursor: pointer;
 }
 p, li, label {
   font-size: 14px;
@@ -44,7 +47,6 @@ button {
   background-color: transparent;
   outline: none;
   border: none;
-  cursor: pointer;
 }
 
 li {

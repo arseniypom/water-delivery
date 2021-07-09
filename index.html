@@ -59,6 +59,17 @@
   </section>
   <main class="container showcase">
     <h1 class="showcase__header">Питьевая вода</h1>
+    <div class="sorting">
+      <div class="sorting__wrapper">
+        <p class="sorting__text">Сортировка</p>
+        <span class="sorting__divide-line"></span>
+        <select class="sorting__select" name="sorting-select">
+          <option value="default" selected>По умолчанию</option>
+          <option value="price-ascending">Цена: по возрастанию</option>
+          <option value="price-descending">Цена: по убыванию</option>
+        </select>
+      </div>
+    </div>
     <div class="applied-filters">
       <p class="text-muted applied-filters__text">Примененные фильтры:</p>
       <ul class="applied-filters__list">
@@ -258,7 +269,7 @@
       </div>
     </div>
   </main>
-  <section class="cart-modal cart-modal--active">
+  <section class="cart-modal">
     <div class="cart-modal__window">
       <div class="cart-modal__top">
         <h2>Корзина</h2>
@@ -274,7 +285,7 @@
             </div>
             <button class="cart-modal__product__remove">
               <img src="./images/cross.svg" alt="cross">
-              <p>Удалить</p>
+              Удалить
             </button>
           </div>
           <div class="cart-modal__product__column cart-modal__product__column-right">
@@ -293,9 +304,9 @@
               </div>
               <div class="cart-modal__product__amount">
                 <select class="cart-modal__product__amount__select" name="amount-select">
-                  <option value="value1" selected>1 шт.</option>
-                  <option value="value2">2 шт.</option>
-                  <option value="value3">3 шт.</option>
+                  <option value="1" selected>1 шт.</option>
+                  <option value="2">2 шт.</option>
+                  <option value="3">3 шт.</option>
                 </select>
               </div>
             </div>
@@ -308,7 +319,7 @@
             </div>
             <button class="cart-modal__product__remove">
               <img src="./images/cross.svg" alt="cross">
-              <p>Удалить</p>
+              Удалить
             </button>
           </div>
           <div class="cart-modal__product__column cart-modal__product__column-right">
@@ -327,9 +338,9 @@
               </div>
               <div class="cart-modal__product__amount">
                 <select class="cart-modal__product__amount__select" name="amount-select">
-                  <option value="value1" selected>1 шт.</option>
-                  <option value="value2">2 шт.</option>
-                  <option value="value3">3 шт.</option>
+                  <option value="1" selected>1 шт.</option>
+                  <option value="2">2 шт.</option>
+                  <option value="3">3 шт.</option>
                 </select>
               </div>
             </div>

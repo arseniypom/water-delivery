@@ -36,10 +36,13 @@ h4 {
   font-weight: 500;
 }
 
+a, button, select {
+  cursor: pointer;
+}
+
 a {
   text-decoration: none;
   color: inherit;
-  cursor: pointer;
 }
 
 p, li, label {
@@ -50,7 +53,6 @@ button {
   background-color: transparent;
   outline: none;
   border: none;
-  cursor: pointer;
 }
 
 li {
@@ -184,6 +186,50 @@ input, textarea {
 
 .showcase {
   position: relative;
+}
+
+.showcase__header {
+  margin-bottom: 1rem;
+}
+
+.sorting {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.sorting__wrapper {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: .5rem 1rem;
+  background-color: #F9F9F9;
+  border: 1px solid #D1D1D1;
+  border-radius: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sorting__divide-line {
+  margin: 0 .75rem;
+  width: 1px;
+  height: 1.25rem;
+  background-color: #D1D1D1;
+}
+
+.sorting__select {
+  font-weight: 600;
+  font-size: .8rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: url("../images/arrow-down.svg") 100%/8% no-repeat transparent;
+  padding: .2rem 1.5rem .2rem .2rem;
 }
 
 .applied-filters {
@@ -613,6 +659,10 @@ input, textarea {
 }
 
 .cart-modal__product__remove {
+  color: #A9A9A9;
+  font-size: .8rem;
+  position: absolute;
+  bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -629,13 +679,6 @@ input, textarea {
   width: 7px;
   height: auto;
   margin-right: 6px;
-}
-
-.cart-modal__product__remove p {
-  color: #A9A9A9;
-  font-size: .75rem;
-  position: absolute;
-  bottom: 0;
 }
 
 .cart-modal__product__title {
@@ -676,8 +719,15 @@ input, textarea {
   text-decoration: line-through;
 }
 
-.cart-modal__product__amount select {
-  cursor: pointer;
+.cart-modal__product__amount__select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: .7rem 2rem .6rem .6rem;
+  border-radius: 12px;
+  border: 1px solid #D1D1D1;
+  outline: none;
+  background: url("../images/arrow-down.svg") 80%/20% no-repeat #F9F9F9;
 }
 
 .cart-modal__bottom {

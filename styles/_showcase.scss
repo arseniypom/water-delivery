@@ -1,5 +1,44 @@
 .showcase {
   position: relative;
+
+  &__header {
+    margin-bottom: 1rem;
+  }
+}
+
+.sorting {
+  width: 100%;
+  margin-bottom: 1rem;
+
+  &__wrapper {
+    width: fit-content;
+    padding: .5rem 1rem;
+    background-color: #F9F9F9;
+    border: 1px solid #D1D1D1;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__divide-line {
+    margin: 0 .75rem;
+    width: 1px;
+    height: 1.25rem;
+    background-color: #D1D1D1;
+  }
+
+  &__select {
+    font-weight: 600;
+    font-size: .8rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: url('../images/arrow-down.svg') 100% / 8% no-repeat transparent;
+    padding: .2rem 1.5rem .2rem .2rem;
+  }
 }
 
 .applied-filters {
