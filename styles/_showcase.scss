@@ -30,7 +30,7 @@
 
   &__select {
     font-weight: 600;
-    font-size: .8rem;
+    font-size: $text-small;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -57,7 +57,7 @@
   &__item {
     padding: 0 1.6rem 0 .5rem;
     margin-left: .75rem;
-    font-size: .75rem;
+    font-size: $text-small;
     font-weight: 600;
     color: $accent-color;
     background-color: rgba($accent-color, .1);
@@ -141,7 +141,7 @@
 
   &__volume {
     color: #575757;
-    font-size: 12px;
+    font-size: $text-small;
     margin-bottom: .75rem;
   }
 
@@ -163,7 +163,7 @@
 
   &__price-previous {
     font-weight: 600;
-    font-size: 12px;
+    font-size: $text-small;
     line-height: 18px;
     text-decoration-line: line-through;
     // img {

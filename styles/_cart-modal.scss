@@ -91,7 +91,7 @@
 
     &__remove {
       color: $muted-color;
-      font-size: .8rem;
+      font-size: $text-small;
       position: absolute;
       bottom: 0;
       display: flex;
@@ -166,7 +166,7 @@
     border-bottom: 1px solid #EBEBEB;
     p {
       font-weight: 600;
-      font-size: 12px;
+      font-size: $text-small;
     }
     h2 img {
       width: .95rem;

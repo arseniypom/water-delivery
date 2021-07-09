@@ -67,6 +67,7 @@ input, textarea {
   max-width: 1171px;
   margin: 0 auto;
   padding: 0 1rem;
+  overflow: auto;
 }
 
 .text-muted {
@@ -222,7 +223,7 @@ input, textarea {
 
 .sorting__select {
   font-weight: 600;
-  font-size: .8rem;
+  font-size: 0.8rem;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -257,7 +258,7 @@ input, textarea {
 .applied-filters__item {
   padding: 0 1.6rem 0 .5rem;
   margin-left: .75rem;
-  font-size: .75rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #007CBB;
   background-color: rgba(0, 124, 187, 0.1);
@@ -355,7 +356,7 @@ input, textarea {
 
 .product-card__volume {
   color: #575757;
-  font-size: 12px;
+  font-size: 0.8rem;
   margin-bottom: .75rem;
 }
 
@@ -384,7 +385,7 @@ input, textarea {
 
 .product-card__price-previous {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.8rem;
   line-height: 18px;
   -webkit-text-decoration-line: line-through;
           text-decoration-line: line-through;
@@ -462,7 +463,7 @@ input, textarea {
 
 .price__inputs label {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -664,7 +665,7 @@ input, textarea {
 
 .cart-modal__product__remove {
   color: #A9A9A9;
-  font-size: .8rem;
+  font-size: 0.8rem;
   position: absolute;
   bottom: 0;
   display: -webkit-box;
@@ -753,7 +754,7 @@ input, textarea {
 
 .cart-modal__subtotal p {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.8rem;
 }
 
 .cart-modal__subtotal h2 img {
@@ -785,5 +786,163 @@ input, textarea {
 
 .cart-modal--active .cart-modal__window {
   right: 0;
+}
+
+.register-login-container {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 4rem auto 1rem;
+}
+
+.register-login-container__img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 2rem;
+}
+
+.register-login-container__img img {
+  width: 100%;
+}
+
+.register-login {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.register-login__header {
+  margin-bottom: 2rem;
+}
+
+.register-login__form {
+  width: 100%;
+}
+
+.register-login__button {
+  margin: 1rem .5rem 0 0;
+  padding: .75rem 1.2rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.register-login__line {
+  width: 90%;
+  height: 1px;
+  background-color: #D1D1D1;
+  margin: 2rem auto 1rem;
+}
+
+.register-login h4 {
+  text-align: center;
+}
+
+.register-login__alternative-signup {
+  margin: .5rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.register-login__alternative-signup__button {
+  padding: .5rem .6rem;
+  margin: 0 .5rem;
+  background-color: #F9F9F9;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 2px solid #D1D1D1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.register-login__alternative-signup__button img {
+  width: 1.7rem;
+  height: auto;
+}
+
+.register-login__alternative-signup__button:hover {
+  border-color: rgba(0, 124, 187, 0.5);
+}
+
+.register {
+  max-width: 40rem;
+}
+
+.login {
+  max-width: 20rem;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form__group {
+  width: 100%;
+  max-width: 19rem;
+  margin: 0 .5rem 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-weight: 600;
+}
+
+.form__group input {
+  padding: .75rem 1rem .75rem 1.25rem;
+  font-size: 1rem;
+  background: #F9F9F9;
+  border: 1px solid #D1D1D1;
+  border-radius: .75rem;
+  margin-top: .5rem;
+}
+
+.form__group input::-webkit-input-placeholder {
+  font-size: 0.8rem;
+}
+
+.form__group input:-ms-input-placeholder {
+  font-size: 0.8rem;
+}
+
+.form__group input::-ms-input-placeholder {
+  font-size: 0.8rem;
+}
+
+.form__group input::placeholder {
+  font-size: 0.8rem;
+}
+
+.form__group input:focus {
+  border-color: #007CBB;
 }
 /*# sourceMappingURL=index.css.map */
