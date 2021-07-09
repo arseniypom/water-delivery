@@ -40,11 +40,14 @@
 
       p {
         color: $muted-color;
-        // font-size: .75rem;
       }
 
       img {
         margin-left: .4rem;
+      }
+
+      &:hover p {
+        color: $accent-color;
       }
     }
   }
@@ -100,6 +103,10 @@
         height: auto;
         margin-right: 6px;
       }
+
+      &:hover {
+        color: $accent-color;
+      }
     }
 
     &__title {
@@ -141,7 +148,7 @@
         border-radius: 12px;
         border: 1px solid #D1D1D1;
         outline: none;
-        background: url('../images/arrow-down.svg') 80% / 20% no-repeat #F9F9F9;
+        background: url('../images/arrow-down.svg') 80% / 15% no-repeat #F9F9F9;
       }
     }
   }

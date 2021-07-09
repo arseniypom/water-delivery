@@ -606,6 +606,10 @@ input, textarea {
   margin-left: .4rem;
 }
 
+.cart-modal__top__close:hover p {
+  color: #007CBB;
+}
+
 .cart-modal__products {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -681,6 +685,10 @@ input, textarea {
   margin-right: 6px;
 }
 
+.cart-modal__product__remove:hover {
+  color: #007CBB;
+}
+
 .cart-modal__product__title {
   margin-bottom: .25rem;
 }
@@ -727,7 +735,7 @@ input, textarea {
   border-radius: 12px;
   border: 1px solid #D1D1D1;
   outline: none;
-  background: url("../images/arrow-down.svg") 80%/20% no-repeat #F9F9F9;
+  background: url("../images/arrow-down.svg") 80%/15% no-repeat #F9F9F9;
 }
 
 .cart-modal__bottom {
