@@ -34,10 +34,10 @@
     </a>
     <div class="header__links">
       <a class="header__link link--primary" href="cart.html">
-        <img src="./images/cart.svg" alt="cart">
+        <img src="./images/icons/cart-icon.svg" alt="cart">
       </a>
-      <a class="header__link link--primary" href="user.html">
-        <img src="./images/user.svg" alt="sign in">
+      <a class="header__link link--primary" href="login.html">
+        <img src="./images/icons/user-icon.svg" alt="sign in">
       </a>
     </div>
   </header>
@@ -60,24 +60,33 @@
 
   <section class="container register-login-container">
     <div class="register-login register">
-      <h1 class="register-login__header">Регистрация</h1>
+      <div class="register-login__header">
+        <h1>Регистрация</h1>
+        <p>Введите Ваши данные, чтобы зарегистрироваться</p>
+      </div>
       <div class="register-login__form form">
-        <label class="form__group">
+        <!-- <label class="form__group">
           Имя
-          <input type="text" placeholder="Ваше имя">
-        </label>
-        <label class="form__group">
-          Фамилия
-          <input type="text" placeholder="Ваша фамилия">
-        </label>
-        <label class="form__group">
-          Адрес e-mail
-          <input type="email" placeholder="Ваш адрес e-mail">
-        </label>
-        <label class="form__group">
-          Телефон
-          <input type="text" placeholder="Ваш номер телефона">
-        </label>
+          <input type="text" required>
+        </label> -->
+        <div class="input-group">
+          <input class="input-group__input" type="text" id="name" required>
+          <label for="name" class="input-group__label">Ваше имя</label>
+        </div>
+        <div class="input-group">
+          <input class="input-group__input" type="text" id="surname" required>
+          <label for="surname" class="input-group__label">Ваша фамилия</label>
+        </div>
+        <div class="input-group">
+          <input class="input-group__input" type="text" id="email" required>
+          <label for="email" class="input-group__label">Ваш e-mail</label>
+          <img src="./images/icons/mail-icon.svg" alt="email" class="input-group__icon">
+        </div>
+        <div class="input-group">
+          <input class="input-group__input" type="text" id="phone" required>
+          <label for="phone" class="input-group__label">Ваш телефон</label>
+          <img src="./images/icons/phone-icon.svg" alt="phone" class="input-group__icon">
+        </div>
       </div>
       <button class="register-login__button button button--primary">Зарегистрироваться</button>
       <span class="register-login__line"></span>
@@ -99,10 +108,11 @@
     <div class="register-login login">
       <h1 class="register-login__header">Вход</h1>
       <div class="register-login__form form">
-        <label class="form__group">
-          Телефон
-          <input type="text" placeholder="Введите номер телефона">
-        </label>
+        <div class="input-group">
+          <input class="input-group__input" type="text" id="phone" required>
+          <label for="phone" class="input-group__label">Номер телефона</label>
+          <img src="./images/icons/phone-icon.svg" alt="phone" class="input-group__icon">
+        </div>
       </div>
       <button class="register-login__button button button--primary">Войти</button>
       <span class="register-login__line"></span>
@@ -115,6 +125,7 @@
           <img src="./images/google.png" alt="google signup">
         </button>
       </div>
+      <h4 class="text-muted">Впервые у нас? <a href="" class="ink--primary">Зарегистрироваться</a></h4>
     </div>
     <div class="register-login-container__img">
       <img src="./images/water-wave.png" alt="wave">

@@ -18,18 +18,23 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  // align-items: center;
 
   &__header {
+    h1 {
+      margin-bottom: 1rem;
+    }
     margin-bottom: 2rem;
   }
 
   &__form {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   &__button {
-    margin: 1rem .5rem 0 0;
+    margin-right: .5rem;
     padding: .75rem 1.2rem;
     width: fit-content;
   }
@@ -80,35 +85,89 @@
   max-width: 20rem;
 }
 
-.form {
+.input-group {
+  width: 100%;
+  max-width: 19rem;
+  margin: 0 .5rem 2rem 0;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  align-items: center;
 
-  &__group {
+  position: relative;
+
+  &__label {
+    color: $muted-color;
+    position: absolute;
+    left: 1rem;
+    top: .7rem;
+    pointer-events: none;
+
+    transition: all .2s ease;
+  }
+
+  &__icon {
+    width: 1.2rem;
+    position: absolute;
+    right: 1rem;
+  }
+
+  &__input {
     width: 100%;
-    max-width: 19rem;
-    margin: 0 .5rem 1rem 0;
-    display: flex;
-    flex-direction: column;
-    
-    font-weight: 600;
+    padding: .75rem 1rem .75rem 1.25rem;
+    font-size: 1rem;
+    background: #F9F9F9;
+    border: 1px solid #D1D1D1;
+    border-radius: .75rem;
 
-    input {
-      padding: .75rem 1rem .75rem 1.25rem;
-      font-size: 1rem;
-      background: #F9F9F9;
-      border: 1px solid #D1D1D1;
-      border-radius: .75rem;
-      margin-top: .5rem;
+    &:invalid + .input-group__label {
+      transform:translateY(0);
+    }
 
-      &::placeholder {
-        font-size: $text-small;
+    &:focus {
+      border-color: $accent-color;
+
+      & + .input-group__label {
+        color: $accent-color;
+        font-size: .6rem;
+        top: 0;
       }
 
-      &:focus {
-        border-color: $accent-color;
+      & ~ .input-group__icon {
+        filter: invert(32%) sepia(85%) saturate(1300%) hue-rotate(173deg) brightness(80%) contrast(105%);
       }
+
     }
   }
 }
+
+// .form {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+
+//   &__group {
+//     width: 100%;
+//     max-width: 19rem;
+//     margin: 0 .5rem 1rem 0;
+//     display: flex;
+//     flex-direction: column;
+    
+//     font-weight: 600;
+
+//     input {
+//       padding: .75rem 1rem .75rem 1.25rem;
+//       font-size: 1rem;
+//       background: #F9F9F9;
+//       border: 1px solid #D1D1D1;
+//       border-radius: .75rem;
+//       margin-top: .5rem;
+
+//       &::placeholder {
+//         font-size: $text-small;
+//       }
+
+//       &:focus {
+//         border-color: $accent-color;
+//       }
+//     }
+//   }
+// }
