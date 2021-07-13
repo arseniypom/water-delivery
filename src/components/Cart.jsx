@@ -1,10 +1,57 @@
 import React from 'react'
 
+import CartItem from './CartItem'
 import rubleIcon from '../images/ruble.svg'
 import crossIcon from '../images/cross.svg'
 import productImg from '../images/products/saint-spring.jpg'
 
+const cartItems = [
+  {
+    name: 'Святой Источник',
+    imageUrl: productImg,
+    volume: '12x0.75л',
+    currentPrice: 599,
+    previuosPrice: 700,
+    amount: 2
+  },
+  {
+    name: 'Святой Источник',
+    imageUrl: productImg,
+    volume: '12x0.75л',
+    currentPrice: 599,
+    previuosPrice: 700,
+    amount: 2
+  },
+  {
+    name: 'Святой Источник',
+    imageUrl: productImg,
+    volume: '12x0.75л',
+    currentPrice: 599,
+    previuosPrice: 700,
+    amount: 2
+  },
+  {
+    name: 'Святой Источник',
+    imageUrl: productImg,
+    volume: '12x0.75л',
+    currentPrice: 599,
+    previuosPrice: 700,
+    amount: 2
+  },
+  {
+    name: 'Святой Источник',
+    imageUrl: productImg,
+    volume: '12x0.75л',
+    currentPrice: 599,
+    previuosPrice: 700,
+    amount: 2
+  }
+]
+
 function Cart({active, setActive}) {
+  React.useEffect(() => {
+    document.body.style.overflow = active ? 'hidden' : ''
+  }, [active])
   return (
     <section onClick={() => setActive(false)} className={active ? "cart-modal cart-modal--active" : "cart-modal"}>
       <div onClick={(e) => e.stopPropagation()} className="cart-modal__window">
@@ -15,74 +62,11 @@ function Cart({active, setActive}) {
           </button>
         </div>
         <div className="cart-modal__products">
-          <div className="cart-modal__product">
-            <div className="cart-modal__product__column cart-modal__product__column-left">
-              <div className="cart-modal__product__img">
-                <img src={productImg} alt="product" />
-              </div>
-              <button className="cart-modal__product__remove">
-                <img src={crossIcon} alt="cross" />
-                Удалить
-              </button>
-            </div>
-            <div className="cart-modal__product__column cart-modal__product__column-right">
-              <h4 className="cart-modal__product__title">Святой источник</h4>
-              <div className="cart-modal__product__volume">
-                <p className="cart-modal__product__volume__text text-muted">Объем:</p>
-                <p>12x0.75л</p>
-              </div>
-              <div className="cart-modal__product__bottom">
-                <div className="cart-modal__product__price">
-                  <h3 className="cart-modal__product__price-current">
-                    599
-                    <img src={rubleIcon} alt="ruble" />
-                  </h3>
-                  <p className="cart-modal__product__price-previous text-muted">700</p>
-                </div>
-                <div className="cart-modal__product__amount">
-                  <select className="cart-modal__product__amount__select" name="amount-select">
-                    <option value="1" selected>1 шт.</option>
-                    <option value="2">2 шт.</option>
-                    <option value="3">3 шт.</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="cart-modal__product">
-            <div className="cart-modal__product__column cart-modal__product__column-left">
-              <div className="cart-modal__product__img">
-                <img src={productImg} alt="product" />
-              </div>
-              <button className="cart-modal__product__remove">
-                <img src={crossIcon} alt="cross" />
-                Удалить
-              </button>
-            </div>
-            <div className="cart-modal__product__column cart-modal__product__column-right">
-              <h4 className="cart-modal__product__title">Святой источник</h4>
-              <div className="cart-modal__product__volume">
-                <p className="cart-modal__product__volume__text text-muted">Объем:</p>
-                <p>12x0.75л</p>
-              </div>
-              <div className="cart-modal__product__bottom">
-                <div className="cart-modal__product__price">
-                  <h3 className="cart-modal__product__price-current">
-                    599
-                    <img src={rubleIcon} alt="ruble" />
-                  </h3>
-                  <p className="cart-modal__product__price-previous text-muted">700</p>
-                </div>
-                <div className="cart-modal__product__amount">
-                  <select className="cart-modal__product__amount__select" name="amount-select">
-                    <option value="1" selected>1 шт.</option>
-                    <option value="2">2 шт.</option>
-                    <option value="3">3 шт.</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
+          {
+            cartItems.map((item) => {
+              return <CartItem {...item} />
+            })
+          }
         </div>
         <div className="cart-modal__bottom">
           <div className="cart-modal__subtotal">
@@ -90,7 +74,7 @@ function Cart({active, setActive}) {
             <h2>3800 <img src={rubleIcon} alt="ruble" /></h2>
           </div>
           <div className="cart-modal__buttons">
-            <button className="button button--black">Продолжить покупки</button>
+            <button onClick={() => setActive(false)} className="button button--black">Продолжить покупки</button>
             <button className="button button--primary">Оформить заказ</button>
           </div>
         </div>

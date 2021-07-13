@@ -8,7 +8,8 @@ function App() {
     <>
       <Header setCartActive={setCartActive} />
       <Categories />
-      <Showcase />
+      {/* <Showcase /> */}
+      <Login />
       <Cart active={cartActive} setActive={setCartActive} />
     </>
   );

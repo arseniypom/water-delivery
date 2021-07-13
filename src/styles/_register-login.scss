@@ -139,35 +139,15 @@
   }
 }
 
-// .form {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: space-between;
+@media screen and (max-width: 767px) {
+  .register-login-container {
+    margin-top: 1rem;
+    &__img {
+      display: none
+    }
+  }
 
-//   &__group {
-//     width: 100%;
-//     max-width: 19rem;
-//     margin: 0 .5rem 1rem 0;
-//     display: flex;
-//     flex-direction: column;
-    
-//     font-weight: 600;
-
-//     input {
-//       padding: .75rem 1rem .75rem 1.25rem;
-//       font-size: 1rem;
-//       background: #F9F9F9;
-//       border: 1px solid #D1D1D1;
-//       border-radius: .75rem;
-//       margin-top: .5rem;
-
-//       &::placeholder {
-//         font-size: $text-small;
-//       }
-
-//       &:focus {
-//         border-color: $accent-color;
-//       }
-//     }
-//   }
-// }
+  .input-group {
+    margin-bottom: 1rem;
+  }
+}
