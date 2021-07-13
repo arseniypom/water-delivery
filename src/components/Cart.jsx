@@ -1,25 +1,27 @@
 import React from 'react'
 
 import rubleIcon from '../images/ruble.svg'
+import crossIcon from '../images/cross.svg'
+import productImg from '../images/products/saint-spring.jpg'
 
-function Cart() {
+function Cart({active, setActive}) {
   return (
-    <section className="cart-modal">
-      <div className="cart-modal__window">
+    <section onClick={() => setActive(false)} className={active ? "cart-modal cart-modal--active" : "cart-modal"}>
+      <div onClick={(e) => e.stopPropagation()} className="cart-modal__window">
         <div className="cart-modal__top">
           <h2>Корзина</h2>
-          <button className="cart-modal__top__close">
-            <p>Закрыть</p><img src="./images/cross.svg" alt="cross" />
+          <button onClick={() => setActive(false)} className="cart-modal__top__close" name="cart-close">
+            <p>Закрыть</p><img src={crossIcon} alt="cross" />
           </button>
         </div>
         <div className="cart-modal__products">
           <div className="cart-modal__product">
             <div className="cart-modal__product__column cart-modal__product__column-left">
               <div className="cart-modal__product__img">
-                <img src="./images/products/saint-spring.jpg" alt="product" />
+                <img src={productImg} alt="product" />
               </div>
               <button className="cart-modal__product__remove">
-                <img src="./images/cross.svg" alt="cross" />
+                <img src={crossIcon} alt="cross" />
                 Удалить
               </button>
             </div>
@@ -50,10 +52,10 @@ function Cart() {
           <div className="cart-modal__product">
             <div className="cart-modal__product__column cart-modal__product__column-left">
               <div className="cart-modal__product__img">
-                <img src="./images/products/saint-spring.jpg" alt="product" />
+                <img src={productImg} alt="product" />
               </div>
               <button className="cart-modal__product__remove">
-                <img src="./images/cross.svg" alt="cross" />
+                <img src={crossIcon} alt="cross" />
                 Удалить
               </button>
             </div>

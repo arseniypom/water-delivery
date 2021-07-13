@@ -40,10 +40,12 @@
 
       p {
         color: $muted-color;
+        pointer-events: none;
       }
 
       img {
         margin-left: .4rem;
+        pointer-events: none;
       }
 
       &:hover p {
