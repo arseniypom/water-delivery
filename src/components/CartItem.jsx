@@ -3,7 +3,12 @@ import React from 'react'
 import rubleIcon from '../images/ruble.svg'
 import crossIcon from '../images/cross.svg'
 
-function CartItem({name, imageUrl, volume, currentPrice, previuosPrice, amount}) {
+function CartItem({name, imageUrl, volume, currentPrice, previousPrice, amount}) {
+  const [selectedAmount, setSelectedAmount] = React.useState(amount)
+  const selectHandler = (e) => {
+    setSelectedAmount(e.target.value)
+  }
+
   return (
     <div className="cart-modal__product">
       <div className="cart-modal__product__column cart-modal__product__column-left">
@@ -27,11 +32,11 @@ function CartItem({name, imageUrl, volume, currentPrice, previuosPrice, amount})
               {currentPrice}
               <img src={rubleIcon} alt="ruble" />
             </h3>
-            <p className="cart-modal__product__price-previous text-muted">{previuosPrice}</p>
+            <p className="cart-modal__product__price-previous text-muted">{previousPrice}</p>
           </div>
           <div className="cart-modal__product__amount">
-            <select className="cart-modal__product__amount__select" name="amount-select">
-              <option value="1" selected>1 шт.</option>
+            <select value={selectedAmount} onChange={selectHandler} className="cart-modal__product__amount__select" name="amount-select">
+              <option value="1">1 шт.</option>
               <option value="2">2 шт.</option>
               <option value="3">3 шт.</option>
             </select>

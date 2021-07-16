@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 
 import cartIcon from '../images/icons/cart-icon.svg'
 import userIcon from '../images/icons/user-icon.svg'
@@ -6,16 +7,16 @@ import userIcon from '../images/icons/user-icon.svg'
 function Header({setCartActive}) {
   return (
     <header className="container header">
-      <a className="header__logo" href="index.html">
+      <Link to='/' className="header__logo">
         <h3>WaterDelivery</h3>
-      </a>
+      </Link>
       <div className="header__links">
         <a onClick={() => {setCartActive(true)}} className="header__link link--primary">
           <img src={cartIcon} alt="cart" />
         </a>
-        <a className="header__link link--primary" href="login.html">
+        <Link to="register" className="header__link link--primary">
           <img src={userIcon} alt="sign in" />
-        </a>
+        </Link>
       </div>
     </header>
   )

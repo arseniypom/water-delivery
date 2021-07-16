@@ -102,6 +102,12 @@
     pointer-events: none;
 
     transition: all .2s ease;
+
+    &--filled {
+      color: $accent-color;
+      font-size: .6rem;
+      top: .1rem;;
+    }
   }
 
   &__icon {
@@ -112,15 +118,11 @@
 
   &__input {
     width: 100%;
-    padding: .75rem 1rem .75rem 1.25rem;
-    font-size: 1rem;
+    padding: .95rem 1rem .7rem;
+    font-size: .9rem;
     background: #F9F9F9;
     border: 1px solid #D1D1D1;
     border-radius: .75rem;
-
-    &:invalid + .input-group__label {
-      transform:translateY(0);
-    }
 
     &:focus {
       border-color: $accent-color;
@@ -128,13 +130,21 @@
       & + .input-group__label {
         color: $accent-color;
         font-size: .6rem;
-        top: 0;
+        top: .1rem;
       }
 
       & ~ .input-group__icon {
         filter: invert(32%) sepia(85%) saturate(1300%) hue-rotate(173deg) brightness(80%) contrast(105%);
       }
+    }
 
+    &--error, &--error:focus {
+      border-color: $error-color;
+      color: $error-color;
+
+      & ~ .input-group__icon {
+        filter: invert(39%) sepia(35%) saturate(1191%) hue-rotate(330deg) brightness(96%) contrast(95%);
+      }
     }
   }
 }

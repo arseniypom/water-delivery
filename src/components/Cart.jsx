@@ -1,52 +1,11 @@
 import React from 'react'
 
+import {cart} from '../db'
+
 import CartItem from './CartItem'
 import rubleIcon from '../images/ruble.svg'
 import crossIcon from '../images/cross.svg'
-import productImg from '../images/products/saint-spring.jpg'
 
-const cartItems = [
-  {
-    name: 'Святой Источник',
-    imageUrl: productImg,
-    volume: '12x0.75л',
-    currentPrice: 599,
-    previuosPrice: 700,
-    amount: 2
-  },
-  {
-    name: 'Святой Источник',
-    imageUrl: productImg,
-    volume: '12x0.75л',
-    currentPrice: 599,
-    previuosPrice: 700,
-    amount: 2
-  },
-  {
-    name: 'Святой Источник',
-    imageUrl: productImg,
-    volume: '12x0.75л',
-    currentPrice: 599,
-    previuosPrice: 700,
-    amount: 2
-  },
-  {
-    name: 'Святой Источник',
-    imageUrl: productImg,
-    volume: '12x0.75л',
-    currentPrice: 599,
-    previuosPrice: 700,
-    amount: 2
-  },
-  {
-    name: 'Святой Источник',
-    imageUrl: productImg,
-    volume: '12x0.75л',
-    currentPrice: 599,
-    previuosPrice: 700,
-    amount: 2
-  }
-]
 
 function Cart({active, setActive}) {
   React.useEffect(() => {
@@ -63,8 +22,8 @@ function Cart({active, setActive}) {
         </div>
         <div className="cart-modal__products">
           {
-            cartItems.map((item) => {
-              return <CartItem {...item} />
+            cart.map((item, i) => {
+              return <CartItem {...item} key={i} />
             })
           }
         </div>
