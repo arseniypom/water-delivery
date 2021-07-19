@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import SidebarOption from './SidebarOption'
 
 function Sidebar() {
-  const [isExpanded, setExpanded] = React.useState(true)
+  const [isExpanded, setExpanded] = React.useState(false)
   return (
     <div className="sidebar">
       <div onClick={() => setExpanded((prev) => !prev)} className="sidebar__header"><h2>Фильтры</h2><span></span></div>

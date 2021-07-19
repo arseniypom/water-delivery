@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Filters() {
+function AppliedFilters() {
   return (
     <div className="applied-filters">
       <p className="text-muted applied-filters__text">Примененные фильтры:</p>
@@ -12,4 +12,4 @@ function Filters() {
   )
 }
 
-export default Filters
+export default AppliedFilters
