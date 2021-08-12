@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import {Header, Categories, Cart} from './components'
-import {Showcase, Register, Login} from './pages';
+import {Showcase, Auth} from './pages';
 
 function App() {
   const [cartActive, setCartActive] = React.useState(false);
@@ -19,8 +19,8 @@ function App() {
         <Route path="/" exact>
           <Showcase />
         </Route>
-        <Route path="/register" exact>
-          <Register />
+        <Route path="/auth">
+          <Auth />
         </Route>
       </Switch>
       <Cart active={cartActive} setActive={setCartActive} />

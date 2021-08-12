@@ -48,6 +48,12 @@
 
   h4 {
     text-align: center;
+
+    .register-link, .login-link {
+      margin-left: .5rem;
+      text-decoration-line: underline;
+      text-underline-offset: 3px;
+    }
   }
 
   &__alternative-signup {

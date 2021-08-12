@@ -1,13 +1,15 @@
 import React from 'react'
+import {useRouteMatch, Link} from "react-router-dom";
 import classNames from 'classnames';
 
-import waveImg from '../images/water-wave.png';
 import phoneIcon from '../images/icons/phone-icon.svg';
 import mailIcon from '../images/icons/mail-icon.svg';
 import googleImg from '../images/google.png';
 import vkImg from '../images/vk.png';
 
 function Register() {
+  let match = useRouteMatch();
+
   const [userInfo, setUserInfo] = React.useState({
     name: '',
     surname: '',
@@ -63,7 +65,6 @@ function Register() {
   }
 
   return (
-    <section className="container register-login-container">
       <form className="register-login register">
         <div className="register-login__header">
           <h1>Регистрация</h1>
@@ -100,11 +101,12 @@ function Register() {
             <img src={googleImg} alt="google signup" />
           </button>
         </div>
+        <h4 className="text-muted">Есть аккаунт?
+          <Link to="/auth" className="login-link link--primary">
+            Войти
+          </Link>
+        </h4>
       </form>
-      <div className="register-login-container__img">
-        <img src={waveImg} alt="wave" />
-      </div>
-    </section>
   )
 }
 

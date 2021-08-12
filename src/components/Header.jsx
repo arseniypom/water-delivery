@@ -14,7 +14,7 @@ function Header({setCartActive}) {
         <a onClick={() => {setCartActive(true)}} className="header__link link--primary">
           <img src={cartIcon} alt="cart" />
         </a>
-        <Link to="register" className="header__link link--primary">
+        <Link to="/auth" className="header__link link--primary">
           <img src={userIcon} alt="sign in" />
         </Link>
       </div>
