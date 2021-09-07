@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Categories() {
+function Navigation() {
   return (
     <section className="categories">
       <ul className=" container categories__list">
@@ -21,4 +21,4 @@ function Categories() {
   )
 }
 
-export default Categories
+export default Navigation

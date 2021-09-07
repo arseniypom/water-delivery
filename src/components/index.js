@@ -1,5 +1,5 @@
 export {default as Header} from './Header';
-export {default as Categories} from './Categories';
+export {default as Navigation} from './Navigation';
 export {default as Sorting} from './Sorting';
 export {default as AppliedFilters} from './AppliedFilters';
 export {default as Sidebar} from './Sidebar';

@@ -3,28 +3,41 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Redirect
 } from "react-router-dom";
 
-import {Header, Categories, Cart} from './components'
+import { useAuth } from './hooks/auth.hook'
+import { AuthContext } from './context/AuthContext';
+import { useRoutes } from './routes'
+import {Header, Navigation, Cart} from './components'
 import {Showcase, Auth} from './pages';
 
 function App() {
+  const {token, login, logout, userId, isReady} = useAuth()
+  const isAuthenticated = !!token
+  const routes = useRoutes(isAuthenticated)
   const [cartActive, setCartActive] = React.useState(false);
   return (
-    <Router>
-      <Header setCartActive={setCartActive} />
-      <Categories />
-      <Switch>
-        <Route path="/" exact>
-          <Showcase />
-        </Route>
-        <Route path="/auth">
-          <Auth />
-        </Route>
-      </Switch>
-      <Cart active={cartActive} setActive={setCartActive} />
-    </Router>
+    <AuthContext.Provider value={{login, logout, token, userId, isAuthenticated}}>
+      <Router>
+        <Header setCartActive={setCartActive} />
+        <Navigation />
+        {/* <Switch>
+          <Route path="/" exact>
+            <Showcase />
+          </Route>
+          {
+            !isAuthenticated &&
+            <Route path="/auth">
+              <Auth />
+            </Route>
+          }
+          <Redirect to="/" />
+        </Switch> */}
+        {routes}
+        <Cart active={cartActive} setActive={setCartActive} />
+      </Router>
+    </AuthContext.Provider>
   );
 }
 

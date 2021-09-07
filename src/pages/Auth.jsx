@@ -3,7 +3,7 @@ import {
   Switch,
   Route,
   useRouteMatch,
-  useParams
+  Redirect
 } from "react-router-dom";
 
 import {Login, Register} from '../components';
@@ -21,6 +21,7 @@ function Auth() {
         <Route path={match.path} exact>
           <Login />
         </Route>
+        <Redirect to="/" />
       </Switch>
       <div className="register-login-container__img">
         <img src={waveImg} alt="wave" />
