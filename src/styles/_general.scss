@@ -114,6 +114,15 @@ input, textarea {
   }
 }
 
+.button--red {
+  color: $error-color-dark;
+  background-color: $error-color-light;
+
+  &:hover {
+    background-color: $error-color-light-2;
+  }
+}
+
 .button--grey {
   color: $muted-color;
 }

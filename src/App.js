@@ -22,18 +22,6 @@ function App() {
       <Router>
         <Header setCartActive={setCartActive} />
         <Navigation />
-        {/* <Switch>
-          <Route path="/" exact>
-            <Showcase />
-          </Route>
-          {
-            !isAuthenticated &&
-            <Route path="/auth">
-              <Auth />
-            </Route>
-          }
-          <Redirect to="/" />
-        </Switch> */}
         {routes}
         <Cart active={cartActive} setActive={setCartActive} />
       </Router>
