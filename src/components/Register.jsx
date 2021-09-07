@@ -2,21 +2,30 @@ import React from 'react'
 import {useRouteMatch, Link} from "react-router-dom";
 import classNames from 'classnames';
 
+import { AuthContext } from '../context/AuthContext'
+import { useHttp } from '../hooks/http.hook'
+
 import phoneIcon from '../images/icons/phone-icon.svg';
 import mailIcon from '../images/icons/mail-icon.svg';
 import googleImg from '../images/google.png';
 import vkImg from '../images/vk.png';
 
 function Register() {
-  let match = useRouteMatch();
+  // let match = useRouteMatch();
+  const auth = React.useContext(AuthContext)
+  const {isLoading, request, error, clearError} = useHttp()
+  const [errorMessage, setErrorMessage] = React.useState('')
 
   const [userInfo, setUserInfo] = React.useState({
-    name: '',
-    surname: '',
+    firstName: '',
+    lastName: '',
     email: '',
-    phone: ''
+    phone: '',
+    password: '',
+    repeatPassword: ''
   })
   const [isEmailCorrect, setEmailCorrect] = React.useState(true)
+  const [isPasswordCorrect, setPasswordCorect] = React.useState(false)
   const [isPhoneCorrect, setPhoneCorrect] = React.useState(true)
 
   const validateEmail = (email) => {
@@ -34,6 +43,14 @@ function Register() {
         break;
       
         case 'phone':
+          break
+        case 'repeatPassword':
+          if (userInfo.password === value) {
+            setErrorMessage('')
+            setPasswordCorect(true)
+          } else {
+            setErrorMessage('Пароли не совпадают')
+          }
           break
       default:
         break;
@@ -64,6 +81,18 @@ function Register() {
     }
   }
 
+  const registerHandler = async (e) => {
+    e.preventDefault()
+    try {
+      const data = await request('/api/auth/register', 'POST', {...userInfo})
+      if (data.token) {
+        auth.login(data.token, data.userId)
+      }
+    } catch (error) {
+      setErrorMessage(error.message)
+    }
+  }
+
   return (
       <form className="register-login register">
         <div className="register-login__header">
@@ -72,12 +101,12 @@ function Register() {
         </div>
         <div className="register-login__form form">
           <div className="input-group">
-            <input value={userInfo.name} onChange={changeHandler} onBlur={blurHandler} className="input-group__input" type="text" id="name" required />
-            <label htmlFor="name" className="input-group__label">Ваше имя</label>
+            <input value={userInfo.name} onChange={changeHandler} onBlur={blurHandler} className="input-group__input" type="text" id="firstName" required />
+            <label htmlFor="firstName" className="input-group__label">Ваше имя</label>
           </div>
           <div className="input-group">
-            <input value={userInfo.surname} onChange={changeHandler} onBlur={blurHandler} className="input-group__input" type="text" id="surname" required />
-            <label htmlFor="surname" className="input-group__label">Ваша фамилия</label>
+            <input value={userInfo.lastName} onChange={changeHandler} onBlur={blurHandler} className="input-group__input" type="text" id="lastName" required />
+            <label htmlFor="lastName" className="input-group__label">Ваша фамилия</label>
           </div>
           <div className="input-group">
             <input value={userInfo.email} onChange={changeHandler} onBlur={blurHandler} className={classNames("input-group__input", {"input-group__input--error": !isEmailCorrect})} type="text" id="email" required />
@@ -89,8 +118,17 @@ function Register() {
             <label htmlFor="phone" className="input-group__label">Ваш телефон</label>
             <img src={phoneIcon} alt="phone" className="input-group__icon" />
           </div>
+          <div className="input-group">
+            <input value={userInfo.password} onChange={changeHandler} onBlur={blurHandler} className="input-group__input" type="password" id="password" required />
+            <label htmlFor="password" className="input-group__label">Придумайте пароль</label>
+          </div>
+          <div className="input-group">
+            <input value={userInfo.repeatPassword} onChange={changeHandler} onBlur={blurHandler} className="input-group__input" type="password" id="repeatPassword" required />
+            <label htmlFor="repeatPassword" className="input-group__label">Повторите пароль</label>
+          </div>
         </div>
-        <button type="submit" className="register-login__button button button--primary">Зарегистрироваться</button>
+        <button className="register-login__button button button--primary" onClick={registerHandler} disabled={!isEmailCorrect || !isPasswordCorrect}>Зарегистрироваться</button>
+        <p className="form__error-message">{errorMessage}</p>
         <span className="register-login__line"></span>
         <h4 className="text-muted">Войти с помощью:</h4>
         <div className="register-login__alternative-signup">

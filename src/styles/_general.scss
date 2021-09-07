@@ -64,6 +64,13 @@ input, textarea {
   overflow: auto;
 }
 
+.form {
+  &__error-message {
+    color: $error-color;
+    margin-top: 1rem;
+  }
+}
+
 .text-muted {
   color: $muted-color;
 }
@@ -84,6 +91,17 @@ input, textarea {
 
   &:hover {
     background-color: #F5F5F5;
+  }
+
+  &:disabled,
+  &[disabled]{
+    background-color: $muted-color;
+    color: $main-color;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: $muted-color;
+    }
   }
 }
 
