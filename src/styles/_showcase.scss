@@ -102,7 +102,7 @@
   margin-left: $sidebar-width;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 
 .product-card {
