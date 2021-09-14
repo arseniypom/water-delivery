@@ -1,0 +1,13 @@
+.loader-products {
+  padding: 1rem 2rem;
+  margin-left: $sidebar-width;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .loader-products {
+    margin-left: 0;
+  }
+}

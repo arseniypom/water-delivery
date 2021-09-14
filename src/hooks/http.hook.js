@@ -20,7 +20,7 @@ export const useHttp = () => {
         if (data.errors) {
           errorMessage = data.errors[0].msg
         }
-        throw new Error(errorMessage || 'Smth went wrong...')
+        throw new Error(errorMessage || 'Что-то не так...')
       }
       setLoading(false)
       return data

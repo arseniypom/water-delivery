@@ -3,6 +3,7 @@ export {default as Navigation} from './Navigation';
 export {default as Sorting} from './Sorting';
 export {default as AppliedFilters} from './AppliedFilters';
 export {default as Sidebar} from './Sidebar';
+export {default as LoaderComponent} from './LoaderComponent';
 export {default as Catalog} from './Catalog';
 export {default as Cart} from './Cart';
 export {default as Login} from './Login';
