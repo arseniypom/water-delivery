@@ -4,7 +4,7 @@ export const useHttp = () => {
   const [isLoading, setLoading] = React.useState(false)
   const [error, setError] = React.useState(null)
 
-  const request = React.useCallback(async (url, method = 'GET', body = null, headers = {}) => {
+  const request = React.useCallback(async (url, method = 'GET', body = null, headers = {}, params={}) => {
     setLoading(true)
     try {
       if (body) {
