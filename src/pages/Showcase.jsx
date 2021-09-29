@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import Select from 'react-select'
 
 import {LoaderComponent, Sorting, AppliedFilters, Sidebar, Catalog} from '../components';
-import {useHttp} from '../hooks/http.hook'
 
 import { fetchProducts } from '../redux/actions/products';
 import { setVolume, setPrice } from '../redux/actions/filters';
@@ -17,12 +16,12 @@ const options = [
 
 function Showcase() {
   const [products, setProducts] = React.useState([])
-  const {request, isLoading} = useHttp()
 
   const dispatch = useDispatch();
-  const {productItems, currentVolume, currentPrice, currentSortBy, currentSortOrder} = useSelector((state) => {
+  const {productItems, isLoaded, currentVolume, currentPrice, currentSortBy, currentSortOrder} = useSelector((state) => {
     return {
       productItems: state.products.items,
+      isLoaded: state.products.isLoaded,
       currentVolume: state.filters.volume,
       currentPrice: state.filters.price,
       currentSortBy: state.sorting.sortBy,
@@ -92,9 +91,9 @@ function Showcase() {
       <AppliedFilters />
       <Sidebar />
       {
-        isLoading ?
-        <LoaderComponent classes={['loader-products']}/>
-        : <Catalog products={productItems} />
+        isLoaded
+        ? <Catalog products={productItems} />
+        : <LoaderComponent classes={['loader-products']}/>
       }
   </main>
   )
