@@ -3,7 +3,7 @@ import React from 'react'
 import waterSample from '../images/products/water.jpg'
 import rubleIcon from '../images/ruble.svg'
 
-function ProductCard({title, volume, currentPrice, previousPrice, image}) {
+function ProductCard({title, volume, quantityInPack, currentPrice, previousPrice, image}) {
 
   const productImage = image || waterSample
 
@@ -19,7 +19,7 @@ function ProductCard({title, volume, currentPrice, previousPrice, image}) {
         <img src={productImage} alt="product" />
       </div>
       <h4 className="product-card__title">{title}</h4>
-      <p className="product-card__volume">Объем: {volume}</p>
+      <p className="product-card__volume">Объем: {quantityInPack > 1 && quantityInPack + ' x'} {volume}л</p>
       <div className="product-card__bottom">
         <div className="product-card__price">
           <h3 className="product-card__price-current">
