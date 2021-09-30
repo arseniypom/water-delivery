@@ -1,5 +1,5 @@
 const initialState = {
-  volume: [],
+  volume: null,
   price: [0, 10000]
 }
 

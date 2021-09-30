@@ -3,10 +3,10 @@ import classNames from 'classnames'
 
 import SidebarOption from './SidebarOption'
 
-function Sidebar() {
+function Sidebar({onSelectVolume}) {
   const [isExpanded, setExpanded] = React.useState(false)
 
-  const [activeVolume, setActiveVolume] = React.useState([])
+  const [activeVolume, setActiveVolume] = React.useState(null)
   const [priceRange, setPriceRange] = React.useState({lowest: 0, highest: 1000000})
 
   const priceInputHandle = (e) => {
@@ -17,15 +17,21 @@ function Sidebar() {
     })
   }
 
+  const handleVolumeClick = (e) => {
+    const volume = e.target.getAttribute('name')
+    setActiveVolume(volume)
+    onSelectVolume(volume)
+  }
+
   return (
     <div className="sidebar">
       <div onClick={() => setExpanded((prev) => !prev)} className="sidebar__header"><h2>Фильтры</h2><span></span></div>
       <div className={classNames("sidebar__content", {'sidebar__content--expanded':isExpanded})}>
         <SidebarOption header={'Объем'} childrenClass={'volumes'}>
-          <li className="volumes__option volumes__option--active" name="0.5">0.5л</li>
-          <li className="volumes__option" name="1">1л</li>
-          <li className="volumes__option" name="5">5л</li>
-          <li className="volumes__option" name="19">19л</li>
+          <li onClick={handleVolumeClick} className={classNames("volumes__option", {"volumes__option--active": activeVolume === '0.5'})} name="0.5">0.5л</li>
+          <li onClick={handleVolumeClick} className={classNames("volumes__option", {"volumes__option--active": activeVolume === '1'})} name="1">1л</li>
+          <li onClick={handleVolumeClick} className={classNames("volumes__option", {"volumes__option--active": activeVolume === '5'})} name="5">5л</li>
+          <li onClick={handleVolumeClick} className={classNames("volumes__option", {"volumes__option--active": activeVolume === '19'})} name="19">19л</li>
         </SidebarOption>
         <SidebarOption header={'Цена'} childrenClass={'price__inputs'}>
           <label>От<input onChange={priceInputHandle} value={priceRange.lowest} id="lowest" type="text" className="price__input" placeholder="99" /></label>

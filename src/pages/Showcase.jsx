@@ -15,7 +15,6 @@ const options = [
 ]
 
 function Showcase() {
-  const [products, setProducts] = React.useState([])
 
   const dispatch = useDispatch();
   const {productItems, isLoaded, currentVolume, currentPrice, currentSortBy, currentSortOrder} = useSelector((state) => {
@@ -52,7 +51,7 @@ function Showcase() {
     }
   }, [])
 
-
+  // Конфигурация react-select
   const colorTheme = (theme) => {
     return {
       ...theme,
@@ -63,7 +62,6 @@ function Showcase() {
       }
     }
   }
-
   const customStyles = {
     control: (provided) => ({
       ...provided,
@@ -75,6 +73,10 @@ function Showcase() {
       ...provided,
       width: 250,
     }),
+  }
+
+  const onSelectVolume = (volume) => {
+    dispatch(setVolume(volume))
   }
 
   return (
@@ -89,7 +91,9 @@ function Showcase() {
         theme={colorTheme}
       />
       <AppliedFilters />
-      <Sidebar />
+      <Sidebar
+        onSelectVolume={onSelectVolume}
+      />
       {
         isLoaded
         ? <Catalog products={productItems} />
