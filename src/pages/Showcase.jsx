@@ -51,6 +51,14 @@ function Showcase() {
     }
   }, [])
 
+  const onSelectVolume = (volume) => {
+    dispatch(setVolume(volume))
+  }
+
+  const onChangePrice = (price) => {
+    dispatch(setPrice(price))
+  }
+
   // Конфигурация react-select
   const colorTheme = (theme) => {
     return {
@@ -75,10 +83,6 @@ function Showcase() {
     }),
   }
 
-  const onSelectVolume = (volume) => {
-    dispatch(setVolume(volume))
-  }
-
   return (
     <main className="container showcase">
       <h1 className="showcase__header">Питьевая вода</h1>
@@ -93,6 +97,7 @@ function Showcase() {
       <AppliedFilters />
       <Sidebar
         onSelectVolume={onSelectVolume}
+        onChangePrice={onChangePrice}
       />
       {
         isLoaded

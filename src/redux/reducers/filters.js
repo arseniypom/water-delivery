@@ -1,6 +1,6 @@
 const initialState = {
   volume: null,
-  price: [0, 10000]
+  price: {lowest: 0, highest: 1000000}
 }
 
 const filters = (state = initialState, action) => {

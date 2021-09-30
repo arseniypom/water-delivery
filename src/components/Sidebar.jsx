@@ -3,18 +3,20 @@ import classNames from 'classnames'
 
 import SidebarOption from './SidebarOption'
 
-function Sidebar({onSelectVolume}) {
+function Sidebar({onSelectVolume, onChangePrice}) {
   const [isExpanded, setExpanded] = React.useState(false)
 
   const [activeVolume, setActiveVolume] = React.useState(null)
   const [priceRange, setPriceRange] = React.useState({lowest: 0, highest: 1000000})
 
-  const priceInputHandle = (e) => {
+  const handlePriceChange = (e) => {
     const {id, value} = e.target
-    setPriceRange({
+    const newPriceRange = {
       ...priceRange,
       [id]: value
-    })
+    }
+    setPriceRange(newPriceRange)
+    onChangePrice(newPriceRange)
   }
 
   const handleVolumeClick = (e) => {
@@ -34,8 +36,8 @@ function Sidebar({onSelectVolume}) {
           <li onClick={handleVolumeClick} className={classNames("volumes__option", {"volumes__option--active": activeVolume === '19'})} name="19">19л</li>
         </SidebarOption>
         <SidebarOption header={'Цена'} childrenClass={'price__inputs'}>
-          <label>От<input onChange={priceInputHandle} value={priceRange.lowest} id="lowest" type="text" className="price__input" placeholder="99" /></label>
-          <label>До<input onChange={priceInputHandle} value={priceRange.highest} id="highest" type="text" className="price__input" placeholder="890" /></label>
+          <label>От<input onChange={handlePriceChange} value={priceRange.lowest} id="lowest" type="text" className="price__input" placeholder="99" /></label>
+          <label>До<input onChange={handlePriceChange} value={priceRange.highest} id="highest" type="text" className="price__input" placeholder="890" /></label>
         </SidebarOption>
         {/* <SidebarOption header={'Брэнды'} childrenClass={'brands'}>
           <li className="brands__option"><a className="link--primary">Святой источник</a></li>

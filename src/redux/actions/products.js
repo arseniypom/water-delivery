@@ -7,7 +7,7 @@ export const setLoaded = (payload) => ({
 
 export const fetchProducts = (volume, price, sortBy, sortOrder) => (dispatch) => {
   dispatch(setLoaded(false))
-  axios.get(`/api/products?${volume !== null ? `volume=${volume}` : ''}&minPrice=${price[0]}&maxPrice=${price[1]}&sortBy=${sortBy}&${sortOrder !== null ? `order=${sortOrder}` : ''}`).then(({data}) => {
+  axios.get(`/api/products?${volume !== null ? `volume=${volume}` : ''}&minPrice=${price.lowest}&maxPrice=${price.highest}&sortBy=${sortBy}&${sortOrder !== null ? `order=${sortOrder}` : ''}`).then(({data}) => {
     dispatch(setLoaded(true))
     dispatch(setProducts(data))
   })
