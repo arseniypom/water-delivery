@@ -94,7 +94,7 @@ function Showcase() {
         styles={customStyles}
         theme={colorTheme}
       />
-      <AppliedFilters />
+      {/* <AppliedFilters /> */}
       <Sidebar
         onSelectVolume={onSelectVolume}
         onChangePrice={onChangePrice}

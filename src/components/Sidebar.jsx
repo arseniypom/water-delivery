@@ -7,7 +7,7 @@ function Sidebar({onSelectVolume, onChangePrice}) {
   const [isExpanded, setExpanded] = React.useState(false)
 
   const [activeVolume, setActiveVolume] = React.useState(null)
-  const [priceRange, setPriceRange] = React.useState({lowest: 0, highest: 1000000})
+  const [priceRange, setPriceRange] = React.useState({lowest: '', highest: ''})
 
   const handlePriceChange = (e) => {
     const {id, value} = e.target
@@ -47,10 +47,11 @@ function Sidebar({onSelectVolume, onChangePrice}) {
           <li className="brands__option"><a className="link--primary">Evian</a></li>
           <li className="brands__option"><a className="link--primary">VOSS</a></li>
         </SidebarOption> */}
-        <div className="sidebar__buttons">
+
+        {/* <div className="sidebar__buttons">
           <button className="button button--primary">Применить</button>
           <button className="button button--grey">Сбросить</button>
-        </div>
+        </div> */}
       </div>
     </div>
   )
