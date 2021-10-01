@@ -1,6 +1,6 @@
 import React from 'react'
 import {Route, Switch, Redirect} from 'react-router-dom'
-import {Showcase, Auth, UserProfile} from './pages';
+import {Showcase, ShowcaseEquipment, ShowcaseService, ShowcaseSale, Auth, UserProfile} from './pages';
 
 
 export const useRoutes = (isAuthenticated) => {
@@ -34,6 +34,15 @@ export const useRoutes = (isAuthenticated) => {
     <Switch>
       <Route path="/" exact>
         <Showcase />
+      </Route>
+      <Route path="/equipment">
+        <ShowcaseEquipment />
+      </Route>
+      <Route path="/service">
+        <ShowcaseService />
+      </Route>
+      <Route path="/sale">
+        <ShowcaseSale />
       </Route>
       <Route path="/auth">
       {
