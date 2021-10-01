@@ -1,5 +1,5 @@
 import React from 'react'
-import {useRouteMatch, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import classNames from 'classnames';
 
 import { AuthContext } from '../context/AuthContext'
@@ -11,9 +11,8 @@ import googleImg from '../images/google.png';
 import vkImg from '../images/vk.png';
 
 function Register() {
-  // let match = useRouteMatch();
   const auth = React.useContext(AuthContext)
-  const {isLoading, request, error, clearError} = useHttp()
+  const {request} = useHttp()
   const [errorMessage, setErrorMessage] = React.useState('')
 
   const [userInfo, setUserInfo] = React.useState({
@@ -26,7 +25,6 @@ function Register() {
   })
   const [isEmailCorrect, setEmailCorrect] = React.useState(true)
   const [isPasswordCorrect, setPasswordCorect] = React.useState(false)
-  const [isPhoneCorrect, setPhoneCorrect] = React.useState(true)
 
   const validateEmail = (email) => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

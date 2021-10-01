@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import Select from 'react-select'
 
-import {LoaderComponent, Sorting, AppliedFilters, Sidebar, Catalog} from '../components';
+import {LoaderComponent, AppliedFilters, Sidebar, Catalog} from '../components';
 
 import { fetchProducts } from '../redux/actions/products';
 import { setVolume, setPrice } from '../redux/actions/filters';
@@ -29,9 +29,9 @@ function Showcase() {
   })
 
 
-  React.useEffect(async () => {
+  React.useEffect(() => {
     dispatch(fetchProducts(currentVolume, currentPrice, currentSortBy, currentSortOrder))
-  } , [currentVolume, currentPrice, currentSortBy, currentSortOrder]);
+  } , [dispatch, currentVolume, currentPrice, currentSortBy, currentSortOrder]);
 
   const onSelectSortBy = React.useCallback((sortOption) => {
     const {value} = sortOption
@@ -49,7 +49,7 @@ function Showcase() {
       default:
         break;
     }
-  }, [])
+  }, [dispatch])
 
   const onSelectVolume = (volume) => {
     dispatch(setVolume(volume))

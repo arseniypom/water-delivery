@@ -1,19 +1,15 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect
 } from "react-router-dom";
 
 import { useAuth } from './hooks/auth.hook'
 import { AuthContext } from './context/AuthContext';
 import { useRoutes } from './routes'
 import {Header, Navigation, Cart} from './components'
-import {Showcase, Auth} from './pages';
 
 function App() {
-  const {token, login, logout, userId, isReady} = useAuth()
+  const {token, login, logout, userId} = useAuth()
   const isAuthenticated = !!token
   const routes = useRoutes(isAuthenticated)
   const [cartActive, setCartActive] = React.useState(false);

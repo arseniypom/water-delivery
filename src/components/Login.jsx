@@ -12,7 +12,7 @@ import vkImg from '../images/vk.png';
 function Login() {
   let match = useRouteMatch();
   const auth = React.useContext(AuthContext)
-  const {isLoading, request, error, clearError} = useHttp()
+  const {request} = useHttp()
   const [errorMessage, setErrorMessage] = React.useState('')
 
   const [form, setForm] = React.useState({
@@ -20,7 +20,6 @@ function Login() {
     password: ''
   })
   const [isEmailCorrect, setEmailCorrect] = React.useState(true)
-  const [isPasswordCorrect, setPasswordCorect] = React.useState(false)
 
   const validateEmail = (email) => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
