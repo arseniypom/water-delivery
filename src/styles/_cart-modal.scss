@@ -125,6 +125,22 @@
       grid-template-columns: 1fr 2fr;
     }
 
+    &__amount {
+      display: flex;
+      align-items: center;
+      
+      &__button {
+        margin: 0 .5rem;
+        img {
+          width: 1.5rem;
+  
+          &:hover {
+            filter: invert(27%) sepia(97%) saturate(1720%) hue-rotate(179deg) brightness(95%) contrast(101%);
+          }
+        }
+      }
+    }
+
     &__bottom {
       display: flex;
       align-items: center;

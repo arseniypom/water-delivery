@@ -2,6 +2,8 @@ import React from 'react'
 
 import rubleIcon from '../images/ruble.svg'
 import crossIcon from '../images/cross.svg'
+import addIcon from '../images/icons/add-icon.svg'
+import removeIcon from '../images/icons/remove-icon.svg'
 
 function CartItem({name, imageUrl, volume, currentPrice, previousPrice, amount}) {
   const [selectedAmount, setSelectedAmount] = React.useState(amount)
@@ -35,11 +37,13 @@ function CartItem({name, imageUrl, volume, currentPrice, previousPrice, amount})
             <p className="cart-modal__product__price-previous text-muted">{previousPrice}</p>
           </div>
           <div className="cart-modal__product__amount">
-            <select value={selectedAmount} onChange={selectHandler} className="cart-modal__product__amount__select" name="amount-select">
-              <option value="1">1 шт.</option>
-              <option value="2">2 шт.</option>
-              <option value="3">3 шт.</option>
-            </select>
+            <button className="cart-modal__product__amount__button button--minus">
+              <img src={removeIcon} alt="cross" />
+            </button>
+            <span className="cart-modal__product__amount-current">{amount}</span>
+            <button className="cart-modal__product__amount__button button--plus">
+              <img src={addIcon} alt="cross" />
+            </button>
           </div>
         </div>
       </div>
