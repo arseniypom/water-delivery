@@ -3,9 +3,23 @@ import React from 'react'
 import waterSample from '../images/products/water.jpg'
 import rubleIcon from '../images/ruble.svg'
 
-function ProductCard({title, volume, quantityInPack, currentPrice, previousPrice, image}) {
+function ProductCard({_id, onAddToCart, title, volume, quantityInPack, currentPrice, previousPrice, image}) {
 
   const productImage = image || waterSample
+
+  const onClickAddToCart = () => {
+    onAddToCart({
+      id: _id,
+      info: {
+        title,
+        volume,
+        quantityInPack,
+        currentPrice,
+        previousPrice,
+        image
+      }
+    })
+  }
 
   return (
     <div className="product-card">
@@ -28,7 +42,7 @@ function ProductCard({title, volume, quantityInPack, currentPrice, previousPrice
           </h3>
           <p className="product-card__price-previous text-muted">{previousPrice}</p>
         </div>
-        <button className="product-card__button button button--primary">В корзину</button>
+        <button onClick={onClickAddToCart} className="product-card__button button button--primary">В корзину</button>
       </div>
     </div>
   )

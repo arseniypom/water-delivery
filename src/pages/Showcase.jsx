@@ -7,6 +7,7 @@ import {LoaderComponent, AppliedFilters, Sidebar, Catalog} from '../components';
 import { fetchProducts } from '../redux/actions/products';
 import { setVolume, setPrice } from '../redux/actions/filters';
 import { setSortByDefault, setSortByPriceAsc, setSortByPriceDesc } from '../redux/actions/sorting';
+import { addToCart, clearCart, removeCartItem, plusCartItem, minusCartItem } from '../redux/actions/cart';
 
 const options = [
   { value: 'default', label: 'По умолчанию' },
@@ -28,11 +29,12 @@ function Showcase() {
     }
   })
 
-
+  // Фетчинг продуктов
   React.useEffect(() => {
     dispatch(fetchProducts(currentVolume, currentPrice, currentSortBy, currentSortOrder))
   } , [dispatch, currentVolume, currentPrice, currentSortBy, currentSortOrder]);
 
+  // Обработчик сортировки
   const onSelectSortBy = React.useCallback((sortOption) => {
     const {value} = sortOption
     switch (value) {
@@ -51,12 +53,19 @@ function Showcase() {
     }
   }, [dispatch])
 
+  // Обработчик фильтрации по объему
   const onSelectVolume = (volume) => {
     dispatch(setVolume(volume))
   }
 
+  // Обработчик фильтрации по цене
   const onChangePrice = (price) => {
     dispatch(setPrice(price))
+  }
+
+  // Обработчик добавления в корзину
+  const onAddToCart = (product) => {
+    dispatch(addToCart(product))
   }
 
   // Конфигурация react-select
@@ -101,7 +110,7 @@ function Showcase() {
       />
       {
         isLoaded
-        ? <Catalog products={productItems} />
+        ? <Catalog products={productItems} onAddToCart={onAddToCart} />
         : <LoaderComponent classes={['loader-products']}/>
       }
   </main>

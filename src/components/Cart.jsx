@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 
 import {cart} from '../db'
 
@@ -8,9 +9,17 @@ import crossIcon from '../images/cross.svg'
 
 
 function Cart({active, setActive}) {
+  const {cartItems, totalPrice} = useSelector((state) => {
+    return {
+      cartItems: state.cart.items,
+      totalPrice: state.cart.totalPrice
+    }
+  })
+
   React.useEffect(() => {
     document.body.style.overflow = active ? 'hidden' : ''
   }, [active])
+
   return (
     <section onClick={() => setActive(false)} className={active ? "cart-modal cart-modal--active" : "cart-modal"}>
       <div onClick={(e) => e.stopPropagation()} className="cart-modal__window">
@@ -22,15 +31,15 @@ function Cart({active, setActive}) {
         </div>
         <div className="cart-modal__products">
           {
-            cart.map((item, i) => {
-              return <CartItem {...item} key={i} />
+            Object.values(cartItems).map((item, i) => {
+              return <CartItem {...item.itemInfo} itemQuantity={item.itemQuantity}  key={i} />
             })
           }
         </div>
         <div className="cart-modal__bottom">
           <div className="cart-modal__subtotal">
             <p>Итог:</p>
-            <h2>3800 <img src={rubleIcon} alt="ruble" /></h2>
+            <h2>{totalPrice} <img src={rubleIcon} alt="ruble" /></h2>
           </div>
           <div className="cart-modal__buttons">
             <button onClick={() => setActive(false)} className="button button--black">Продолжить покупки</button>
