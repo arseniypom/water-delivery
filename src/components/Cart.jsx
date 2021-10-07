@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import {cart} from '../db'
 
@@ -7,8 +7,10 @@ import CartItem from './CartItem'
 import rubleIcon from '../images/ruble.svg'
 import crossIcon from '../images/cross.svg'
 
+import { removeCartItem, plusCartItem, minusCartItem } from '../redux/actions/cart';
 
 function Cart({active, setActive}) {
+  const dispatch = useDispatch();
   const {cartItems, totalPrice} = useSelector((state) => {
     return {
       cartItems: state.cart.items,
@@ -19,6 +21,18 @@ function Cart({active, setActive}) {
   React.useEffect(() => {
     document.body.style.overflow = active ? 'hidden' : ''
   }, [active])
+
+  const removeItemHandler = (id) => {
+    dispatch(removeCartItem(id))
+  }
+
+  const plusItemHandler = (id) => {
+    dispatch(plusCartItem(id))
+  }
+
+  const minusItemHandler = (id) => {
+    dispatch(minusCartItem(id))
+  }
 
   return (
     <section onClick={() => setActive(false)} className={active ? "cart-modal cart-modal--active" : "cart-modal"}>
@@ -31,8 +45,16 @@ function Cart({active, setActive}) {
         </div>
         <div className="cart-modal__products">
           {
-            Object.values(cartItems).map((item, i) => {
-              return <CartItem {...item.itemInfo} itemQuantity={item.itemQuantity}  key={i} />
+            Object.entries(cartItems).map((itemEntries) => {
+              return <CartItem
+                removeItemHandler={removeItemHandler}
+                plusItemHandler={plusItemHandler}
+                minusItemHandler={minusItemHandler}
+                {...itemEntries[1].itemInfo}
+                itemQuantity={itemEntries[1].itemQuantity}
+                id={itemEntries[0]}
+                key={itemEntries[0]}
+              />
             })
           }
         </div>

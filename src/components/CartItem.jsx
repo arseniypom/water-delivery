@@ -7,9 +7,19 @@ import removeIcon from '../images/icons/remove-icon.svg'
 
 import waterSample from '../images/products/water.jpg'
 
-function CartItem({name, image, quantityInPack, volume, currentPrice, previousPrice, itemQuantity}) {
+function CartItem({removeItemHandler, plusItemHandler, minusItemHandler, name, image, quantityInPack, volume, currentPrice, previousPrice, itemQuantity, id}) {
 
   const productImage = image || waterSample
+
+  const onRemoveItem = () => {
+    removeItemHandler(id)
+  }
+  const onPlusItem = () => {
+    plusItemHandler(id)
+  }
+  const onMinusItem = () => {
+    minusItemHandler(id)
+  }
 
   return (
     <div className="cart-modal__product">
@@ -17,7 +27,7 @@ function CartItem({name, image, quantityInPack, volume, currentPrice, previousPr
         <div className="cart-modal__product__img">
           <img src={productImage} alt="product" />
         </div>
-        <button className="cart-modal__product__remove">
+        <button onClick={onRemoveItem} className="cart-modal__product__remove">
           <img src={crossIcon} alt="cross" />
           Удалить
         </button>
@@ -37,11 +47,11 @@ function CartItem({name, image, quantityInPack, volume, currentPrice, previousPr
             <p className="cart-modal__product__price-previous text-muted">{previousPrice}</p>
           </div>
           <div className="cart-modal__product__amount">
-            <button className="cart-modal__product__amount__button button--minus">
+            <button onClick={onMinusItem} className="cart-modal__product__amount__button button--minus">
               <img src={removeIcon} alt="cross" />
             </button>
             <span className="cart-modal__product__amount-current">{itemQuantity}</span>
-            <button className="cart-modal__product__amount__button button--plus">
+            <button onClick={onPlusItem} className="cart-modal__product__amount__button button--plus">
               <img src={addIcon} alt="cross" />
             </button>
           </div>
