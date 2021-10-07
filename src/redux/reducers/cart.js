@@ -41,13 +41,41 @@ const cart = (state = initialState, action) => {
       return initialState
     }
     case 'REMOVE_CART_ITEM': {
-
+      const newItems = {...state.items}
+      delete newItems[action.payload]
+      return {
+        ...state,
+        items: newItems,
+        totalPrice: getTotalCartPrice(newItems),
+      }
     }
     case 'PLUS_CART_ITEM': {
-
+      const newItems = {
+        ...state.items,
+        [action.payload]: {
+          itemInfo: state.items[action.payload].itemInfo,
+          itemQuantity: ++state.items[action.payload].itemQuantity
+        }
+      }
+      return {
+        ...state,
+        items: newItems,
+        totalPrice: getTotalCartPrice(newItems),
+      }
     }
     case 'MINUS_CART_ITEM': {
-
+      const newItems = {
+        ...state.items,
+        [action.payload]: {
+          itemInfo: state.items[action.payload].itemInfo,
+          itemQuantity: --state.items[action.payload].itemQuantity
+        }
+      }
+      return {
+        ...state,
+        items: newItems,
+        totalPrice: getTotalCartPrice(newItems),
+      }
     }
     default:
       return state;
