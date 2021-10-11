@@ -5,7 +5,7 @@ import Select from 'react-select'
 import {LoaderComponent, AppliedFilters, Sidebar, Catalog} from '../components';
 
 import { fetchProducts } from '../redux/actions/products';
-import { setVolume, setPrice } from '../redux/actions/filters';
+import { setVolume, setPrice, resetFilters } from '../redux/actions/filters';
 import { setSortByDefault, setSortByPriceAsc, setSortByPriceDesc } from '../redux/actions/sorting';
 import { addToCart, clearCart, removeCartItem, plusCartItem, minusCartItem } from '../redux/actions/cart';
 
@@ -68,6 +68,11 @@ function Showcase() {
     dispatch(addToCart(product))
   }
 
+  // Сброс фильтров
+  const onResetFilters = () => {
+    dispatch(resetFilters())
+  }
+
   // Конфигурация react-select
   const colorTheme = (theme) => {
     return {
@@ -107,6 +112,7 @@ function Showcase() {
       <Sidebar
         onSelectVolume={onSelectVolume}
         onChangePrice={onChangePrice}
+        onResetFilters={onResetFilters}
       />
       {
         isLoaded

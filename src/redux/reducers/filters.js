@@ -15,6 +15,8 @@ const filters = (state = initialState, action) => {
               ...state,
               price: action.payload
           }
+      case 'RESET_FILTERS':
+          return initialState
       default:
           return state;
   }

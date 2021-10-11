@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import SidebarOption from './SidebarOption'
 
-function Sidebar({onSelectVolume, onChangePrice}) {
+function Sidebar({onSelectVolume, onChangePrice, onResetFilters}) {
   const [isExpanded, setExpanded] = React.useState(false)
 
   const [activeVolume, setActiveVolume] = React.useState(null)
@@ -23,6 +23,12 @@ function Sidebar({onSelectVolume, onChangePrice}) {
     const volume = e.target.getAttribute('name')
     setActiveVolume(volume)
     onSelectVolume(volume)
+  }
+
+  const handleResetFilters = () => {
+    setPriceRange({lowest: '', highest: ''})
+    setActiveVolume(null)
+    onResetFilters()
   }
 
   return (
@@ -48,10 +54,10 @@ function Sidebar({onSelectVolume, onChangePrice}) {
           <li className="brands__option"><a className="link--primary">VOSS</a></li>
         </SidebarOption> */}
 
-        {/* <div className="sidebar__buttons">
-          <button className="button button--primary">Применить</button>
-          <button className="button button--grey">Сбросить</button>
-        </div> */}
+        <div className="sidebar__buttons">
+          {/* <button className="button button--primary">Применить</button> */}
+          <button onClick={handleResetFilters} className="button button--grey">Сбросить</button>
+        </div>
       </div>
     </div>
   )
