@@ -1,11 +1,10 @@
 import React from 'react'
 
-import waterSample from '../images/products/water.jpg'
 import rubleIcon from '../images/ruble.svg'
 
 function ProductCard({_id, onAddToCart, title, volume, quantityInPack, currentPrice, previousPrice, image}) {
 
-  const productImage = image || waterSample
+  const productImage = `/images/${image}.jpg`
 
   const onClickAddToCart = () => {
     onAddToCart({
@@ -30,7 +29,11 @@ function ProductCard({_id, onAddToCart, title, volume, quantityInPack, currentPr
         </div>
       }
       <div className="product-card__img">
-        <img src={productImage} alt="product" />
+        <img
+          src={productImage}
+          alt="product"
+          onError={(e)=>{e.target.onerror = null; e.target.src="/images/water.jpg"}}
+        />
       </div>
       <h4 className="product-card__title">{title}</h4>
       <p className="product-card__volume">Объем: {quantityInPack > 1 && quantityInPack + ' x'} {volume}л</p>

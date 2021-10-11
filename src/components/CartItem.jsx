@@ -9,7 +9,7 @@ import waterSample from '../images/products/water.jpg'
 
 function CartItem({removeItemHandler, plusItemHandler, minusItemHandler, name, image, quantityInPack, volume, currentPrice, previousPrice, itemQuantity, id}) {
 
-  const productImage = image || waterSample
+  const productImage = `/images/${image}.jpg`
 
   const onRemoveItem = () => {
     removeItemHandler(id)
@@ -25,7 +25,11 @@ function CartItem({removeItemHandler, plusItemHandler, minusItemHandler, name, i
     <div className="cart-modal__product">
       <div className="cart-modal__product__column cart-modal__product__column-left">
         <div className="cart-modal__product__img">
-          <img src={productImage} alt="product" />
+        <img
+          src={productImage}
+          alt="product"
+          onError={(e)=>{e.target.onerror = null; e.target.src="/images/water.jpg"}}
+        />
         </div>
         <button onClick={onRemoveItem} className="cart-modal__product__remove">
           <img src={crossIcon} alt="cross" />
