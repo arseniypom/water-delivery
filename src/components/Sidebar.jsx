@@ -21,8 +21,13 @@ function Sidebar({onSelectVolume, onChangePrice, onResetFilters}) {
 
   const handleVolumeClick = (e) => {
     const volume = e.target.getAttribute('name')
-    setActiveVolume(volume)
-    onSelectVolume(volume)
+    if (activeVolume === volume) {
+      setActiveVolume(null)
+      onSelectVolume(null)
+    } else {
+      setActiveVolume(volume)
+      onSelectVolume(volume)
+    }
   }
 
   const handleResetFilters = () => {
