@@ -12,7 +12,7 @@ function CartItem({removeItemHandler, plusItemHandler, minusItemHandler, name, i
   const productImage = `/images/${image}.jpg`
 
   const onRemoveItem = () => {
-    removeItemHandler(id)
+    window.confirm("Вы уверены, что хотите удалить этот товар из корзины?") && removeItemHandler(id)
   }
   const onPlusItem = () => {
     plusItemHandler(id)
