@@ -51,7 +51,7 @@ function CartItem({removeItemHandler, plusItemHandler, minusItemHandler, name, i
             <p className="cart-modal__product__price-previous text-muted">{previousPrice}</p>
           </div>
           <div className="cart-modal__product__amount">
-            <button onClick={onMinusItem} className="cart-modal__product__amount__button button--minus">
+            <button onClick={onMinusItem} className="cart-modal__product__amount__button button--minus" disabled={itemQuantity === 1}>
               <img src={removeIcon} alt="cross" />
             </button>
             <span className="cart-modal__product__amount-current">{itemQuantity}</span>
