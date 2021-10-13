@@ -1,8 +1,13 @@
 import React from "react"
+import { useSelector, useDispatch } from 'react-redux'
+
+import { fetchProfileData, resetProfileData } from '../redux/actions/profile'
 
 const storageName = 'userData'
 
 export const useAuth = () => {
+  const dispatch = useDispatch();
+
   const [token, setToken] = React.useState(null)
   const [isReady, setReady] = React.useState(false)
   const [userId, setUserId] = React.useState(null)
@@ -15,6 +20,8 @@ export const useAuth = () => {
     localStorage.setItem(storageName, JSON.stringify({
       token: jwtToken, userId: id
     }))
+
+    dispatch(fetchProfileData(id))
   }, [])
 
   const logout = React.useCallback(() => {
@@ -22,6 +29,7 @@ export const useAuth = () => {
     setUserId(null)
 
     localStorage.removeItem(storageName)
+    dispatch(resetProfileData())
   }, [])
   
   React.useEffect(() => {
