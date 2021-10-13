@@ -1,20 +1,21 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 
 function Navigation() {
   return (
     <section className="categories">
       <ul className=" container categories__list">
         <li className="categories__option">
-          <a className="link--primary" href="/">Питьевая вода</a>
+          <Link to="/" className="link--primary">Питьевая вода</Link>
         </li>
         <li className="categories__option">
-          <a className="link--primary" href="/equipment">Оборудование</a>
+          <Link className="link--primary" to="/equipment">Оборудование</Link>
         </li>
         <li className="categories__option">
-          <a className="link--primary" href="/service">Услуги</a>
+          <Link className="link--primary" to="/service">Услуги</Link>
         </li>
         <li className="categories__option">
-          <a className="link--primary" href="/sale">Акции</a>
+          <Link className="link--primary" to="/sale">Акции</Link>
         </li>
       </ul>
     </section>
