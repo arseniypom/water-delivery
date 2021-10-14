@@ -22,9 +22,11 @@ function UserProfile() {
   }
   
   return (
-    <main className="container">
-      <h1>Личный кабинет</h1>
-      <button onClick={logoutHandler} className="button button--red header__button">Выйти</button>
+    <main className="container user-profile">
+      <div className="user-profile__header">
+        <h1>Личный кабинет</h1>
+        <button onClick={logoutHandler} className="button button--red header__button">Выйти</button>
+      </div>
 
       {
         isLoaded
