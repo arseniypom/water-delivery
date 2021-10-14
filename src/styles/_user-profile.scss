@@ -1,0 +1,26 @@
+.user-profile {
+  padding-top: 2rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__main {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__header {
+      text-align: center;
+    }
+    &__info {
+      width: 100%;
+      max-width: 40rem;
+      margin-top: 2rem;
+    }
+  }
+}

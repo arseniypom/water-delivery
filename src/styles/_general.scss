@@ -82,6 +82,11 @@ input, textarea {
   }
 }
 
+.link--underlined {
+  text-decoration-line: underline;
+  text-underline-offset: 3px;
+}
+
 .button {
   font-size: 13px;
   font-weight: 700;
