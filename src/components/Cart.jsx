@@ -1,7 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-
-import {cart} from '../db'
+import {Link} from 'react-router-dom';
 
 import CartItem from './CartItem'
 import rubleIcon from '../images/ruble.svg'
@@ -64,8 +63,8 @@ function Cart({active, setActive}) {
             <h2>{totalPrice} <img src={rubleIcon} alt="ruble" /></h2>
           </div>
           <div className="cart-modal__buttons">
-            <button onClick={() => setActive(false)} className="button button--black">Продолжить покупки</button>
-            <button className="button button--primary">Оформить заказ</button>
+            <Link onClick={() => setActive(false)} to="/" className="button button--black">Продолжить покупки</Link>
+            <Link onClick={() => setActive(false)} to="/checkout" className="button button--primary">Оформить заказ</Link>
           </div>
         </div>
       </div>
