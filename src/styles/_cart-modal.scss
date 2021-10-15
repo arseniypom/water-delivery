@@ -72,6 +72,12 @@
     flex-direction: row;
     justify-content: space-between;
 
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
     &__column {
       width: 100%;
       position: relative;
@@ -79,6 +85,7 @@
       &-left {
         max-width: 6.25rem;
         padding-bottom: 1rem;
+        padding-right: .5rem;
       }
       &-right {
         max-width: 15.688rem;
@@ -123,7 +130,7 @@
 
     &__volume {
       display: grid;
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 1fr 3.5fr;
     }
 
     &__amount {
