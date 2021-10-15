@@ -2,16 +2,28 @@ import React from 'react'
 import classNames from 'classnames';
 
 function OrderBillingInfo({userData}) {
-  console.log(userData);
+
   const [billingInfo, setBillingInfo] = React.useState({
-    firstName: userData.firstName,
-    lastName: userData.lastName,
-    email: userData.email,
-    phone: userData.phone,
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
     city: '',
     address: '',
     postalCode: '',
   })
+
+  React.useEffect(() => {
+    setBillingInfo((prev) => {
+      return {
+        ...prev,
+        firstName: userData.firstName,
+        lastName: userData.lastName,
+        email: userData.email,
+        phone: userData.phone,
+      }
+    })
+  }, [userData])
 
   const [isEmailCorrect, setEmailCorrect] = React.useState(true)
 
