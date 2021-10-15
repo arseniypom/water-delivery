@@ -1,34 +1,10 @@
 import React from 'react'
 import {Route, Switch, Redirect} from 'react-router-dom'
-import {Showcase, ShowcaseEquipment, ShowcaseService, ShowcaseSale, Auth, UserProfile} from './pages';
+
+import {Showcase, ShowcaseEquipment, ShowcaseService, ShowcaseSale, Auth, UserProfile, OrderCheckout} from './pages';
 
 
 export const useRoutes = (isAuthenticated) => {
-  // if (isAuthenticated) {
-  //   return (
-  //     <Switch>
-  //       <Route path="/" exact>
-  //         <Showcase />
-  //       </Route>
-  //       <Route path="/auth">
-  //         <UserProfile />
-  //       </Route>
-  //       <Redirect to="/" />
-  //     </Switch>
-  //   )
-  // }
-
-  // return (
-  //   <Switch>
-  //     <Route path="/" exact>
-  //       <Showcase />
-  //     </Route>
-  //     <Route path="/auth">
-  //       <Auth />
-  //     </Route>
-  //     <Redirect to="/" />
-  //   </Switch>
-  // )
 
   return (
     <Switch>
@@ -45,11 +21,18 @@ export const useRoutes = (isAuthenticated) => {
         <ShowcaseSale />
       </Route>
       <Route path="/auth">
-      {
-        isAuthenticated ?
-          <UserProfile />
-          : <Auth />
-      }
+        {
+          isAuthenticated ?
+            <UserProfile />
+            : <Auth />
+        }
+      </Route>
+      <Route path="/checkout">
+        {
+          isAuthenticated ?
+            <OrderCheckout />
+            : <Auth />
+        }
       </Route>
       <Redirect to="/" />
     </Switch>
