@@ -2,7 +2,8 @@ const initialState = {
   info: {
     firstName: '',
     lastName: '',
-    email: ''
+    email: '',
+    phone: '',
   },
   orders: [],
   isLoaded: false
@@ -16,7 +17,8 @@ const profile = (state = initialState, action) => {
               info: {
                 firstName: action.payload.firstName,
                 lastName: action.payload.lastName,
-                email: action.payload.email
+                email: action.payload.email,
+                phone: action.payload.phone,
               },
               orders: action.payload.orders
           }
