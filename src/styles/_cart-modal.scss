@@ -48,10 +48,14 @@
       img {
         margin-left: .4rem;
         pointer-events: none;
+        filter: invert(88%) sepia(0%) saturate(1253%) hue-rotate(168deg) brightness(78%) contrast(86%);
       }
 
       &:hover p {
         color: $accent-color;
+      }
+      &:hover img {
+        filter: invert(27%) sepia(27%) saturate(7500%) hue-rotate(182deg) brightness(95%) contrast(102%);
       }
     }
   }
@@ -257,5 +261,14 @@
     &__buttons {
       margin: .5rem 0 0;
     }
+  }
+}
+
+.cart-empty {
+  &__text {
+    text-align: center;
+  }
+  &__img img {
+    width: 100%;
   }
 }

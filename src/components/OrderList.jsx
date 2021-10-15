@@ -3,6 +3,8 @@ import React from 'react'
 import CartItem from './CartItem'
 import rubleIcon from '../images/ruble.svg'
 
+import { CartEmpty } from '.'
+
 function OrderList({removeItemHandler, plusItemHandler, minusItemHandler, cartItems, totalPrice}) {
 
   const cartItemsArray = Object.entries(cartItems)
@@ -44,7 +46,7 @@ function OrderList({removeItemHandler, plusItemHandler, minusItemHandler, cartIt
               </div>
             </div>
         </>
-        : <p>Ваша корзина еще пуста</p>
+        : <CartEmpty />
       }
       
     </div>

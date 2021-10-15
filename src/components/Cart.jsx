@@ -6,6 +6,7 @@ import CartItem from './CartItem'
 import rubleIcon from '../images/ruble.svg'
 import crossIcon from '../images/cross.svg'
 
+import { CartEmpty } from '.'
 import { removeCartItem, plusCartItem, minusCartItem } from '../redux/actions/cart';
 
 function Cart({active, setActive}) {
@@ -44,7 +45,8 @@ function Cart({active, setActive}) {
         </div>
         <div className="cart-modal__products">
           {
-            Object.entries(cartItems).map((itemEntries) => {
+            Object.entries(cartItems).length
+              ? Object.entries(cartItems).map((itemEntries) => {
               return <CartItem
                 removeItemHandler={removeItemHandler}
                 plusItemHandler={plusItemHandler}
@@ -55,6 +57,7 @@ function Cart({active, setActive}) {
                 key={itemEntries[0]}
               />
             })
+            : <CartEmpty onShopClick={() => setActive(false)} />
           }
         </div>
         <div className="cart-modal__bottom">

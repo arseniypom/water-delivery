@@ -10,3 +10,4 @@ export {default as Register} from './Register';
 export {default as UserInfo} from './UserInfo';
 export {default as OrderList} from './OrderList';
 export {default as OrderBillingInfo} from './OrderBillingInfo';
+export {default as CartEmpty} from './CartEmpty';
