@@ -21,3 +21,8 @@ export const setProfileData = (data) => ({
 export const resetProfileData = () => ({
   type: 'RESET_PROFILE_DATA',
 });
+
+export const addOrder = (payload) => ({
+  type: 'ADD_ORDER',
+  payload,
+});

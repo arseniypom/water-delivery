@@ -22,6 +22,14 @@ const profile = (state = initialState, action) => {
               },
               orders: action.payload.orders
           }
+      case 'ADD_ORDER':
+          return {
+            ...state,
+            orders: [
+              ...state.orders,
+              action.payload
+            ]
+          }
       case 'RESET_PROFILE_DATA':
           return initialState
       case 'SET_LOADED':
