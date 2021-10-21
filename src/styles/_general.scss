@@ -66,13 +66,16 @@ input, textarea {
 
 .form {
   &__error-message {
-    color: $error-color;
     margin-top: 1rem;
   }
 }
 
 .text-muted {
   color: $muted-color;
+}
+
+.text-danger {
+  color: $error-color;
 }
 
 .link--primary {

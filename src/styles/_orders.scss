@@ -1,0 +1,31 @@
+.orders {
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid $accent-color;
+
+  border-radius: 12px;
+
+  &__header {
+    border-bottom: 1px solid $accent-color;
+
+    .orders__row__cell {
+      padding: .7rem;
+      font-weight: bold;
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: 1fr 3fr 1fr 2fr 2fr;
+  
+    &__cell {
+      padding: .5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+}
