@@ -93,7 +93,7 @@ function OrderCheckout() {
         }
       })
 
-      const newOrder = await request('/api/order/checkout', 'POST', {products: cartItems, orderInfo, date: Date.now()}, {
+      const newOrder = await request('/api/order/checkout', 'POST', {products: cartItems, orderInfo, totalSum: totalPrice, date: Date.now()}, {
         Authorization: `Bearer ${auth.token}`
       })
 
