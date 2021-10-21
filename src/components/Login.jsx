@@ -76,7 +76,7 @@ function Login() {
           </div>
       </div>
       <button onClick={loginHandler} className="register-login__button button button--primary" disabled={!isEmailCorrect || !form.password.length}>Войти</button>
-      <p className="form__error-message">{errorMessage}</p>
+      <p className="form__error-message text-danger">{errorMessage}</p>
       <p className="text-muted">Тестовая Учетная Запись: a1@mail.ru / 123456</p>
       <span className="register-login__line"></span>
       <h4 className="text-muted">Войти с помощью:</h4>

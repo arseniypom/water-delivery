@@ -126,7 +126,7 @@ function Register() {
           </div>
         </div>
         <button className="register-login__button button button--primary" onClick={registerHandler} disabled={!isEmailCorrect || !isPasswordCorrect}>Зарегистрироваться</button>
-        <p className="form__error-message">{errorMessage}</p>
+        <p className="form__error-message text-danger">{errorMessage}</p>
         <span className="register-login__line"></span>
         <h4 className="text-muted">Войти с помощью:</h4>
         <div className="register-login__alternative-signup">
