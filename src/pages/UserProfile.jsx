@@ -2,17 +2,20 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 
 import { LoaderComponent, UserInfo } from '../components';
-import { fetchProfileData } from '../redux/actions/profile'
 import { AuthContext } from '../context/AuthContext'
+import { useHttp } from '../hooks/http.hook'
 
 function UserProfile() {
   const auth = React.useContext(AuthContext)
+  const {request, error} = useHttp()
+
+  const [ordersList, setOrdersList] = React.useState([])
 
   const dispatch = useDispatch();
-  const {info, orders, isLoaded} = useSelector((state) => {
+  const {info, orderIds, isLoaded} = useSelector((state) => {
     return {
       info: state.profile.info,
-      orders: state.profile.orders,
+      orderIds: state.profile.orders,
       isLoaded: state.profile.isLoaded
     }
   })
@@ -20,6 +23,21 @@ function UserProfile() {
   const logoutHandler = () => {
     auth.logout()
   }
+
+  const fetchOrdersList = async () => {
+    try {
+      const orders = await request('/api/order/list', 'GET', null, {
+        Authorization: `Bearer ${auth.token}`
+      })
+      setOrdersList(orders)
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  React.useEffect(() => {
+    fetchOrdersList()
+  }, [])
   
   return (
     <main className="container user-profile">
@@ -27,11 +45,12 @@ function UserProfile() {
         <h1>Личный кабинет</h1>
         <button onClick={logoutHandler} className="button button--red header__button">Выйти</button>
       </div>
-
       {
-        isLoaded
-        ? <UserInfo userData={info} orders={orders} />
-        : <LoaderComponent classes={['loader-profile']}/>
+        error
+          ? <p className="text-danger">Возникла внутренняя ошибка, пожалуйста, попробуйте выйти и зайти снова. Если не помогло, обратитесь в <a className="link--underlined" href="mailto:arseniy.pomazkov@gmail.com">Поддержку</a></p>
+          : isLoaded
+            ? <UserInfo userData={info} ordersList={ordersList}/>
+            : <LoaderComponent classes={['loader-profile']}/>
       }
     </main>
   )
