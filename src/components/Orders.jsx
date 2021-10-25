@@ -21,7 +21,7 @@ function Orders({ordersList}) {
               <div className="orders__row__cell">{order.orderItems.length}</div>
               <div className="orders__row__cell">{order.totalSum}</div>
               <div className="orders__row__cell">{orderDate}</div>
-              <div className="orders__row__cell">*типа статус*</div>
+              <div className="orders__row__cell">{order.status}</div>
             </div>
           )
         })
