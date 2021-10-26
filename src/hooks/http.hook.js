@@ -3,6 +3,7 @@ import React from "react"
 export const useHttp = () => {
   const [isLoading, setLoading] = React.useState(false)
   const [error, setError] = React.useState(null)
+  const [responseStatus, setResponseStatus] = React.useState(null)
 
   const request = React.useCallback(async (url, method = 'GET', body = null, headers = {}, params={}) => {
     setLoading(true)
@@ -14,6 +15,7 @@ export const useHttp = () => {
 
       const response = await fetch(url, {method, body, headers})
       const data = await response.json()
+      setResponseStatus(response.status)
 
       if (!response.ok) {
         let errorMessage = data.message
@@ -37,6 +39,7 @@ export const useHttp = () => {
     isLoading,
     request,
     error,
-    clearError
+    clearError,
+    responseStatus
   }
 }

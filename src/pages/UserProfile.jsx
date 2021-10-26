@@ -7,7 +7,7 @@ import { useHttp } from '../hooks/http.hook'
 
 function UserProfile() {
   const auth = React.useContext(AuthContext)
-  const {request, error} = useHttp()
+  const {request, error, responseStatus} = useHttp()
 
   const [ordersList, setOrdersList] = React.useState([])
 
@@ -31,13 +31,17 @@ function UserProfile() {
       })
       setOrdersList(orders)
     } catch (e) {
-      console.log(e);
+      console.log(e)
     }
   }
 
   React.useEffect(() => {
     fetchOrdersList()
   }, [])
+
+  React.useEffect(() => {
+    responseStatus === 401 && logoutHandler()
+  }, [responseStatus])
   
   return (
     <main className="container user-profile">
