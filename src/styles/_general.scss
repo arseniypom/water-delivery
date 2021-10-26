@@ -57,6 +57,77 @@ input, textarea {
   outline: none;
 }
 
+.input-group {
+  width: 100%;
+  max-width: 19rem;
+  margin: 0 .5rem 2rem 0;
+  display: flex;
+  align-items: center;
+
+  position: relative;
+
+  &__label {
+    color: $muted-color;
+    position: absolute;
+    left: 1rem;
+    top: .7rem;
+    pointer-events: none;
+
+    transition: all .2s ease;
+
+    &--filled {
+      color: $accent-color;
+      font-size: .6rem;
+      top: .1rem;;
+    }
+  }
+
+  &__icon {
+    width: 1.2rem;
+    position: absolute;
+    right: 1rem;
+    pointer-events: none;
+  }
+
+  &__input {
+    width: 100%;
+    padding: .95rem 1rem .7rem;
+    font-size: .9rem;
+    background: #F9F9F9;
+    border: 1px solid #D1D1D1;
+    border-radius: .75rem;
+
+    &:focus, &:-webkit-autofill {
+      border-color: $accent-color;
+
+      & + .input-group__label {
+        color: $accent-color;
+        font-size: .6rem;
+        top: .1rem;
+      }
+
+      & ~ .input-group__icon {
+        filter: invert(32%) sepia(85%) saturate(1300%) hue-rotate(173deg) brightness(80%) contrast(105%);
+      }
+    }
+
+    &--error, &--error:focus {
+      border-color: $error-color;
+      color: $error-color;
+
+      & ~ .input-group__icon {
+        filter: invert(39%) sepia(35%) saturate(1191%) hue-rotate(330deg) brightness(96%) contrast(95%);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .input-group {
+    margin-bottom: 1rem;
+  }
+}
+
 .container {
   max-width: 1171px;
   margin: 0 auto;
