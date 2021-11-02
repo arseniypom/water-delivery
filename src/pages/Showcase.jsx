@@ -18,7 +18,7 @@ const options = [
 function Showcase() {
 
   const dispatch = useDispatch();
-  const {productItems, isLoaded, currentVolume, currentPrice, currentSortBy, currentSortOrder} = useSelector((state) => {
+  const {productItems, isLoaded, currentVolume, currentPrice, currentSortBy, currentSortOrder, cartItems} = useSelector((state) => {
     return {
       productItems: state.products.items,
       isLoaded: state.products.isLoaded,
@@ -26,6 +26,7 @@ function Showcase() {
       currentPrice: state.filters.price,
       currentSortBy: state.sorting.sortBy,
       currentSortOrder: state.sorting.sortOrder,
+      cartItems: state.cart.items,
     }
   })
 
@@ -116,7 +117,7 @@ function Showcase() {
       />
       {
         isLoaded
-        ? <Catalog products={productItems} onAddToCart={onAddToCart} />
+        ? <Catalog products={productItems} cartItems={cartItems} onAddToCart={onAddToCart} />
         : <LoaderComponent classes={['loader-products']}/>
       }
   </main>

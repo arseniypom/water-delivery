@@ -2,7 +2,7 @@ import React from 'react'
 
 import rubleIcon from '../images/ruble.svg'
 
-function ProductCard({_id, onAddToCart, title, volume, quantityInPack, currentPrice, previousPrice, image}) {
+function ProductCard({_id, onAddToCart, title, volume, quantityInPack, currentPrice, previousPrice, image, isInCart, cartItems}) {
 
   const productImage = `/images/${image}.jpg`
 
@@ -45,7 +45,9 @@ function ProductCard({_id, onAddToCart, title, volume, quantityInPack, currentPr
           </h3>
           <p className="product-card__price-previous text-muted">{previousPrice}</p>
         </div>
-        <button onClick={onClickAddToCart} className="product-card__button button button--primary">В корзину<span className="product-card__button__amount"></span></button>
+        <button onClick={onClickAddToCart} className="product-card__button button button--primary">В корзину
+        {isInCart && <span className="product-card__button__amount">{cartItems[_id].itemQuantity}</span>}
+        </button>
       </div>
     </div>
   )
