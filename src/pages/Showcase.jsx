@@ -98,12 +98,18 @@ function Showcase() {
     }),
   }
 
+  const getCurrentSelectValue = () => {
+    return options.find((option) => {
+      return option.value === `${currentSortBy}${currentSortOrder ? '-' + currentSortOrder : ''}`
+    })
+  }
+
   return (
     <main className="container showcase">
       <h1 className="showcase__header">Питьевая вода</h1>
       <Select
         onChange={onSelectSortBy}
-        defaultValue={options[0]}
+        defaultValue={getCurrentSelectValue()}
         options={options}
         isSearchable={false}
         styles={customStyles}
