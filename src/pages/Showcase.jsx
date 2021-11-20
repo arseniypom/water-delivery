@@ -2,12 +2,12 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import Select from 'react-select'
 
-import {LoaderComponent, AppliedFilters, Sidebar, Catalog} from '../components';
+import {LoaderComponent, Sidebar, Catalog} from '../components';
 
 import { fetchProducts } from '../redux/actions/products';
 import { setVolume, setPrice, resetFilters } from '../redux/actions/filters';
 import { setSortByDefault, setSortByPriceAsc, setSortByPriceDesc } from '../redux/actions/sorting';
-import { addToCart, clearCart, removeCartItem, plusCartItem, minusCartItem } from '../redux/actions/cart';
+import { addToCart } from '../redux/actions/cart';
 
 const options = [
   { value: 'default', label: 'По умолчанию' },
@@ -55,27 +55,27 @@ function Showcase() {
   }, [dispatch])
 
   // Обработчик фильтрации по объему
-  const onSelectVolume = (volume) => {
+  const onSelectVolume =  React.useCallback((volume) => {
     dispatch(setVolume(volume))
-  }
+  }, [dispatch])
 
   // Обработчик фильтрации по цене
-  const onChangePrice = (price) => {
+  const onChangePrice =  React.useCallback((price) => {
     dispatch(setPrice(price))
-  }
+  }, [dispatch])
 
   // Обработчик добавления в корзину
-  const onAddToCart = (product) => {
+  const onAddToCart =  React.useCallback((product) => {
     dispatch(addToCart(product))
-  }
+  }, [dispatch])
 
   // Сброс фильтров
-  const onResetFilters = () => {
+  const onResetFilters = React.useCallback(() => {
     dispatch(resetFilters())
-  }
+  }, [dispatch])
 
   // Конфигурация react-select
-  const colorTheme = (theme) => {
+  const colorTheme = React.useCallback((theme) => {
     return {
       ...theme,
       colors: {
@@ -84,32 +84,34 @@ function Showcase() {
         primary: '#007CBB'
       }
     }
-  }
-  const customStyles = {
-    control: (provided) => ({
-      ...provided,
-      borderRadius: '12px',
-      width: 250,
-      marginBottom: 16
-    }),
-    menu: (provided) => ({
-      ...provided,
-      width: 250,
-    }),
-  }
+  }, [])
+  const [customStyles, setCustomStyles] = React.useState(
+    {
+      control: (provided) => ({
+        ...provided,
+        borderRadius: '12px',
+        width: 250,
+        marginBottom: 16
+      }),
+      menu: (provided) => ({
+        ...provided,
+        width: 250,
+      }),
+    }
+  )
 
-  const getCurrentSelectValue = () => {
+  const currentSelectValue = React.useMemo(() => {
     return options.find((option) => {
       return option.value === `${currentSortBy}${currentSortOrder ? '-' + currentSortOrder : ''}`
     })
-  }
-
+  }, [currentSortBy, currentSortOrder])
+  console.log('upd');
   return (
     <main className="container showcase">
       <h1 className="showcase__header">Питьевая вода</h1>
       <Select
         onChange={onSelectSortBy}
-        defaultValue={getCurrentSelectValue()}
+        defaultValue={currentSelectValue}
         options={options}
         isSearchable={false}
         styles={customStyles}
