@@ -1,0 +1,20 @@
+.empty-page {
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  &__text {
+    width: 100%;
+    max-width: 40rem;
+    h1 {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__img img {
+    width: 100%;
+    max-width: 30rem;
+  } 
+}

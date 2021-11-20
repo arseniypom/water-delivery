@@ -1,7 +1,7 @@
 import React from 'react'
 import {Route, Switch, Redirect} from 'react-router-dom'
 
-import {Showcase, ShowcaseEquipment, ShowcaseService, ShowcaseSale, Auth, UserProfile, OrderCheckout} from './pages';
+import {Showcase, ShowcaseEquipment, ShowcaseService, ShowcaseSale, Auth, UserProfile, OrderCheckout, EmptyPage} from './pages';
 
 
 export const useRoutes = (isAuthenticated) => {
@@ -12,13 +12,16 @@ export const useRoutes = (isAuthenticated) => {
         <Showcase />
       </Route>
       <Route path="/equipment">
-        <ShowcaseEquipment />
+        {/* <ShowcaseEquipment /> */}
+        <EmptyPage />
       </Route>
       <Route path="/service">
-        <ShowcaseService />
+        {/* <ShowcaseService /> */}
+        <EmptyPage />
       </Route>
       <Route path="/sale">
-        <ShowcaseSale />
+        {/* <ShowcaseSale /> */}
+        <EmptyPage />
       </Route>
       <Route path="/auth">
         {
