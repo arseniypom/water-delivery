@@ -6,15 +6,14 @@ function Orders({ordersList}) {
     <div className="orders">
       <div className="orders__row orders__header">
         <div className="orders__row__cell">№ заказа</div>
-        <div className="orders__row__cell">Количество товарных позиций</div>
+        <div className="orders__row__cell">Количество товаров</div>
         <div className="orders__row__cell">Сумма, руб.</div>
         <div className="orders__row__cell">Дата создания</div>
         <div className="orders__row__cell">Статус</div>
       </div>
       {
         ordersList.map(order => {
-          let orderDate = new Date(order.date)
-          orderDate = orderDate.toString().split(' ').slice(2, 4).join('.')
+          const orderDate = new Intl.DateTimeFormat('ru').format(new Date(Date.parse(order.date)))
           return (
             <div className="orders__row" key={order._id}>
               <div className="orders__row__cell">{order.orderNumber}</div>
